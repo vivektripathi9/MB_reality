@@ -1,2 +1,0 @@
-Home_asset/*.svg filter=lfs diff=lfs merge=lfs -text
-about_asset/*.svg filter=lfs diff=lfs merge=lfs -text
