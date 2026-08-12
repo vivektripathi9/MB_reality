@@ -889,16 +889,22 @@ main > section,
   outline: none;
 }
 
+.about-experience-content {
+  min-width: 0;
+}
+
 .about-experience-content h2 {
   font-family: var(--font);
   font-size: clamp(26px, 3.4vw, 52px);
   font-weight: 700;
   font-style: normal;
-  line-height: 1.02;
+  line-height: 1.08;
   letter-spacing: -0.03em;
   color: var(--white);
   margin-bottom: clamp(22px, 3vw, 36px);
   white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .about-accordion-item {
@@ -978,6 +984,18 @@ main > section,
   opacity: 1;
 }
 
+@media (max-width: 1100px) {
+  .about-experience-content h2 {
+    font-size: clamp(24px, 4.2vw, 40px);
+    line-height: 1.15;
+    max-width: none;
+  }
+
+  .about-experience-content h2 br {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
   .about-experience-inner {
     grid-template-columns: 1fr;
@@ -985,6 +1003,12 @@ main > section,
 
   .about-experience-media {
     width: min(100%, 420px);
+  }
+
+  .about-experience-content h2 {
+    font-size: clamp(22px, 5.5vw, 34px);
+    line-height: 1.2;
+    margin-bottom: 20px;
   }
 
   .about-accordion-trigger {
@@ -1543,8 +1567,7 @@ main > section,
   width: min(100%, calc(655px * 2 + 22px));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 655px));
-  justify-content: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(14px, 1.8vw, 22px);
 }
 
@@ -1552,10 +1575,14 @@ main > section,
   position: relative;
   width: 100%;
   max-width: 655px;
-  height: auto;
+  justify-self: center;
+  min-height: clamp(150px, 28vw, 270px);
   aspect-ratio: 655 / 270;
-  min-height: 0;
-  padding: 0;
+  padding: clamp(20px, 3.5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
   text-align: left;
   overflow: hidden;
   background: var(--ink);
@@ -1563,32 +1590,21 @@ main > section,
 }
 
 .spaces-grid span {
-  position: absolute;
-  top: 28px;
-  right: 32px;
-  font-size: clamp(28px, 3.2vw, 42px);
+  align-self: flex-end;
+  font-size: clamp(24px, 3.2vw, 42px);
   font-weight: 500;
   color: var(--white);
   line-height: 1;
 }
 
 .spaces-grid h3 {
-  position: absolute;
-  top: 112px;
-  left: 50px;
-  width: min(300px, calc(100% - 100px));
-  height: 110px;
-  opacity: 1;
-  transform: rotate(0deg);
   margin: 0;
-  font-size: clamp(22px, 2vw, 32px);
+  width: min(100%, 300px);
+  font-size: clamp(20px, 2vw, 32px);
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--white);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 /* Blogs */
@@ -1883,18 +1899,104 @@ main > section,
     grid-template-columns: 1fr;
   }
 
+  .lap-copy {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .lap-copy h2 {
+    margin-left: 0;
+  }
+
+  .lap-decor {
+    width: clamp(120px, 22vw, 220px);
+    opacity: 0.45;
+  }
+
   .footer-panel {
     height: auto;
     min-height: 348px;
   }
 
+  .belief {
+    padding: clamp(24px, 4vw, 48px) var(--pad);
+  }
+
   .belief-frame {
     grid-template-columns: 1fr;
     min-height: 0;
+    gap: 0;
   }
 
   .belief-media {
-    height: clamp(280px, 55vw, 420px);
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 447 / 1203;
+    height: auto;
+    max-height: clamp(360px, 62vw, 560px);
+  }
+
+  .belief-media img {
+    object-position: center top;
+  }
+
+  .belief-copy {
+    padding: clamp(28px, 5vw, 48px) clamp(24px, 4vw, 40px);
+  }
+
+  .dev-grid {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dev-card {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .spaces {
+    padding: clamp(28px, 5vw, 48px) var(--pad);
+  }
+
+  .spaces-panel {
+    padding: clamp(36px, 5vw, 56px) clamp(20px, 4vw, 40px);
+  }
+
+  .spaces-panel h2 {
+    font-size: clamp(26px, 4vw, 36px);
+    margin-bottom: clamp(24px, 4vw, 36px);
+  }
+
+  .spaces-panel h2 br {
+    display: none;
+  }
+
+  .spaces-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 655px;
+    gap: clamp(12px, 2.5vw, 18px);
+  }
+
+  .spaces-grid article {
+    max-width: none;
+    min-height: clamp(140px, 34vw, 220px);
+    padding: clamp(18px, 4vw, 28px);
+  }
+
+  .spaces-grid h3 {
+    font-size: clamp(18px, 3.5vw, 26px);
+    width: min(100%, 240px);
+  }
+
+  .spaces-grid h3 br {
+    display: none;
+  }
+
+  .spaces-grid span {
+    font-size: clamp(20px, 4vw, 32px);
   }
 
   .cta-inner {
@@ -1934,20 +2036,153 @@ main > section,
     grid-template-columns: 1fr auto;
   }
 
+  .hero {
+    padding: 0 var(--pad) clamp(24px, 5vw, 40px);
+  }
+
+  .hero-frame {
+    aspect-ratio: 4 / 5;
+    min-height: 380px;
+  }
+
+  .hero-copy {
+    width: calc(100% - 32px);
+    padding: 16px 0;
+  }
+
+  .hero-copy h1 {
+    white-space: normal;
+    font-size: clamp(22px, 6.5vw, 34px);
+    margin-bottom: 12px;
+  }
+
+  .hero-copy p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .belief {
+    padding: clamp(20px, 5vw, 32px) var(--pad);
+  }
+
+  .belief-media {
+    max-height: clamp(300px, 72vw, 440px);
+  }
+
+  .belief-copy h2 {
+    font-size: clamp(20px, 5.5vw, 28px);
+  }
+
+  .belief-copy h2 br {
+    display: none;
+  }
+
+  .belief-copy p {
+    font-size: 14px;
+    max-width: none;
+  }
+
+  .belief-copy .btn-dark {
+    width: 100%;
+    max-width: 280px;
+    min-height: 48px;
+  }
+
+  .about-experience {
+    padding: clamp(24px, 5vw, 40px) var(--pad) clamp(36px, 7vw, 64px);
+  }
+
+  .about-experience-content h2 {
+    font-size: clamp(20px, 6.2vw, 28px);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .lap {
+    padding: clamp(28px, 6vw, 48px) var(--pad);
+    gap: 20px;
+  }
+
+  .lap-decor {
+    display: none;
+  }
+
+  .lap-copy h2 {
+    font-size: clamp(24px, 6vw, 32px);
+    margin-bottom: 20px;
+  }
+
+  .lap-copy h2 br {
+    display: none;
+  }
+
+  .lap-media {
+    min-height: 220px;
+    max-height: 320px;
+  }
+
+  .developments {
+    padding: clamp(40px, 8vw, 56px) var(--pad);
+  }
+
+  .developments h2,
+  .blogs h2 {
+    font-size: clamp(24px, 6vw, 32px);
+    margin-bottom: 24px;
+  }
+
+  .dev-card-copy h3 {
+    font-size: clamp(22px, 5.5vw, 28px);
+  }
+
+  .developments-cta {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .spaces-panel {
+    padding: clamp(28px, 6vw, 40px) clamp(16px, 4vw, 24px);
+  }
+
+  .spaces-panel h2 br {
+    display: none;
+  }
+
+  .spaces-panel h2 {
+    font-size: clamp(22px, 6vw, 30px);
+    margin-bottom: 24px;
+  }
+
+  .spaces-grid {
+    gap: 12px;
+  }
+
+  .spaces-grid article {
+    min-height: 130px;
+    aspect-ratio: auto;
+    padding: 18px 20px;
+  }
+
+  .spaces-grid h3 {
+    font-size: clamp(17px, 4.8vw, 22px);
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .spaces-grid h3 br {
+    display: none;
+  }
+
+  .spaces-grid span {
+    font-size: clamp(18px, 5vw, 28px);
+  }
+
   .blog-grid {
     flex-wrap: wrap;
   }
 
   .footer-cols {
     grid-template-columns: 1fr;
-  }
-
-  .spaces-grid h3 {
-    top: 96px;
-    left: 24px;
-    width: calc(100% - 48px);
-    height: auto;
-    min-height: 90px;
   }
 
   .dev-card-overlay {
@@ -1973,5 +2208,74 @@ main > section,
   .dev-link {
     margin-top: 10px;
     font-size: 9px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .belief-frame {
+    grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+    gap: clamp(16px, 2vw, 28px);
+    align-items: stretch;
+  }
+
+  .belief-media {
+    max-width: none;
+    max-height: none;
+    height: 100%;
+    min-height: clamp(420px, 52vw, 640px);
+    aspect-ratio: auto;
+  }
+
+  .belief-copy {
+    padding: clamp(28px, 4vw, 56px) clamp(24px, 3.5vw, 48px);
+  }
+
+  .belief-copy h2 {
+    font-size: clamp(20px, 2.4vw, 30px);
+  }
+
+  .belief-copy h2 br {
+    display: none;
+  }
+
+  .lap {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .dev-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .dev-card {
+    flex: 1 1 calc(50% - 12px);
+    min-width: min(100%, 320px);
+  }
+
+  .spaces-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    gap: clamp(12px, 2vw, 18px);
+  }
+
+  .spaces-grid article {
+    max-width: none;
+    min-height: clamp(150px, 22vw, 220px);
+    padding: clamp(18px, 2.5vw, 28px);
+  }
+
+  .spaces-grid h3 {
+    font-size: clamp(17px, 2.2vw, 24px);
+    width: min(100%, 200px);
+  }
+
+  .spaces-grid h3 br {
+    display: none;
+  }
+
+  .spaces-grid span {
+    font-size: clamp(20px, 2.8vw, 32px);
   }
 }
