@@ -330,8 +330,16 @@ main > section,
 
 /* Contact hero */
 .contact-hero-copy h1 {
-  margin-bottom: 0;
-  white-space: nowrap;
+  margin-bottom: 18px;
+  white-space: normal;
+}
+
+.contact-hero-copy p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 /* Contact panel */
@@ -779,6 +787,11 @@ main > section,
   color: rgba(255, 255, 255, 0.88);
   max-width: 34rem;
   padding-top: 6px;
+  margin-bottom: 16px;
+}
+
+.about-vision-copy p:last-child {
+  margin-bottom: 0;
 }
 
 .about-vision-media {
@@ -1288,6 +1301,10 @@ main > section,
   line-height: 1.65;
   color: var(--muted);
   max-width: 36rem;
+  margin-bottom: clamp(14px, 1.8vw, 18px);
+}
+
+.belief-copy p:last-of-type {
   margin-bottom: clamp(22px, 2.5vw, 36px);
 }
 
@@ -1359,6 +1376,25 @@ main > section,
   letter-spacing: -0.03em;
   margin-bottom: 28px;
   margin-left: auto;
+}
+
+.lap-copy p {
+  max-width: 36rem;
+  margin: 0 0 16px;
+  font-size: clamp(14px, 1.15vw, 16px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.lap-tagline {
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.developments.is-hidden {
+  display: none;
 }
 
 .lap-media {
@@ -1524,7 +1560,7 @@ main > section,
 
 /* Spaces */
 .spaces {
-  padding: clamp(40px, 5vw, 72px) var(--pad);
+  padding: clamp(40px, 5vw, 72px) var(--pad) clamp(20px, 2.5vw, 32px);
   background: var(--bg);
 }
 
@@ -1571,13 +1607,18 @@ main > section,
   gap: clamp(14px, 1.8vw, 22px);
 }
 
+.spaces-grid--why {
+  width: min(100%, calc(655px * 3 + 44px));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .spaces-grid article {
   position: relative;
   width: 100%;
   max-width: 655px;
   justify-self: center;
   min-height: clamp(150px, 28vw, 270px);
-  aspect-ratio: 655 / 270;
+  aspect-ratio: auto;
   padding: clamp(20px, 3.5vw, 32px);
   display: flex;
   flex-direction: column;
@@ -1599,12 +1640,21 @@ main > section,
 
 .spaces-grid h3 {
   margin: 0;
-  width: min(100%, 300px);
+  width: 100%;
   font-size: clamp(20px, 2vw, 32px);
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--white);
+}
+
+.spaces-card-copy {
+  margin: clamp(10px, 1.5vw, 16px) 0 0;
+  font-size: clamp(13px, 1.1vw, 15px);
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 100%;
 }
 
 /* Blogs */
@@ -1957,7 +2007,7 @@ main > section,
   }
 
   .spaces {
-    padding: clamp(28px, 5vw, 48px) var(--pad);
+    padding: clamp(28px, 5vw, 48px) var(--pad) clamp(16px, 2vw, 24px);
   }
 
   .spaces-panel {
@@ -1973,7 +2023,8 @@ main > section,
     display: none;
   }
 
-  .spaces-grid {
+  .spaces-grid,
+  .spaces-grid--why {
     grid-template-columns: 1fr;
     width: 100%;
     max-width: 655px;
@@ -2253,29 +2304,9 @@ main > section,
     min-width: min(100%, 320px);
   }
 
-  .spaces-grid {
+  .spaces-grid--why {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
     width: 100%;
-    max-width: none;
-    gap: clamp(12px, 2vw, 18px);
-  }
-
-  .spaces-grid article {
-    max-width: none;
-    min-height: clamp(150px, 22vw, 220px);
-    padding: clamp(18px, 2.5vw, 28px);
-  }
-
-  .spaces-grid h3 {
-    font-size: clamp(17px, 2.2vw, 24px);
-    width: min(100%, 200px);
-  }
-
-  .spaces-grid h3 br {
-    display: none;
-  }
-
-  .spaces-grid span {
-    font-size: clamp(20px, 2.8vw, 32px);
   }
 }
