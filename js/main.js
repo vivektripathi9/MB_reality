@@ -35,11 +35,22 @@
       link.classList.toggle("is-active", href === `#${current}`);
     });
   };
-  window.addEventListener("scroll", setActive, { passive: true });
+  let scrollTick = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (scrollTick) return;
+      scrollTick = true;
+      requestAnimationFrame(() => {
+        setActive();
+        scrollTick = false;
+      });
+    },
+    { passive: true }
+  );
   setActive();
 
-  const accordion = document.querySelector(".about-accordion");
-  if (accordion) {
+  document.querySelectorAll(".about-accordion").forEach((accordion) => {
     accordion.querySelectorAll(".about-accordion-trigger").forEach((trigger) => {
       trigger.addEventListener("click", () => {
         const item = trigger.closest(".about-accordion-item");
@@ -54,5 +65,5 @@
         }
       });
     });
-  }
+  });
 })();

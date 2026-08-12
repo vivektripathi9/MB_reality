@@ -2310,3 +2310,1045 @@ main > section,
     width: 100%;
   }
 }
+
+/* Lap of Nature microsite */
+.microsite-page {
+  background: var(--white);
+  color: var(--ink);
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+.microsite-page .hero {
+  padding: 0;
+}
+
+.microsite-page main > section[id],
+.microsite-page .microsite-footer[id] {
+  scroll-margin-top: 96px;
+}
+
+.microsite-page .site-header {
+  background: #27282e;
+}
+
+.microsite-page.nav-open .nav,
+.microsite-page .site-header.nav-open .nav {
+  background: #27282e;
+}
+
+.microsite-logo-img {
+  width: auto;
+  height: 56px;
+  max-width: 200px;
+}
+
+.nav-contact {
+  display: none;
+}
+
+.microsite-hero {
+  padding: 0;
+}
+
+.microsite-hero-frame {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 16 / 9;
+  min-height: clamp(320px, 56vw, 720px);
+  background: #1a1510;
+  overflow: hidden;
+}
+
+.microsite-hero-frame .hero-image {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.microsite-hero-copy {
+  width: min(720px, calc(100% - 64px));
+  margin-right: auto;
+  margin-left: clamp(32px, 7vw, 120px);
+  text-align: left;
+  align-self: start;
+  justify-self: start;
+  padding-top: clamp(48px, 8vw, 120px);
+}
+
+.microsite-hero-heading {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.microsite-hero-heading h1 {
+  white-space: normal;
+  max-width: none;
+  margin: 0 0 8px;
+  font-family: "Satoshi", var(--font), sans-serif;
+  font-size: clamp(32px, 4.2vw, 56px);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #2f3338;
+}
+
+.microsite-live {
+  font-family: "Great Vibes", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2em;
+  letter-spacing: 0;
+  color: #2a2e32;
+  vertical-align: baseline;
+}
+
+.microsite-hero-heading p {
+  margin: 0;
+  font-family: "Satoshi", var(--font), sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #2f3338;
+}
+
+.microsite-intro {
+  background: var(--white);
+  padding: clamp(48px, 6vw, 96px) var(--pad) clamp(48px, 6vw, 96px);
+}
+
+.microsite-intro-frame {
+  width: min(100%, var(--page));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(24px, 3vw, 48px);
+  align-items: center;
+}
+
+.microsite-intro-copy {
+  color: var(--ink);
+  margin-left: auto;
+  padding-right: clamp(0px, 2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 420px;
+  text-align: right;
+}
+
+.microsite-intro-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: clamp(12px, 1.5vw, 20px);
+  margin-bottom: clamp(16px, 2vw, 24px);
+  width: 100%;
+}
+
+.microsite-intro-mark {
+  flex-shrink: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-top: 0.15em;
+}
+
+.microsite-intro-copy h2 {
+  font-size: clamp(24px, 2.8vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #27282e;
+  margin: 0;
+  text-align: right;
+}
+
+.microsite-intro-copy p {
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #5c6478;
+  width: 100%;
+  margin: 0;
+  text-align: right;
+}
+
+.microsite-intro-media {
+  width: min(720px, 100%);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1113 / 622;
+  overflow: hidden;
+  background: #eef1f4;
+  flex-shrink: 0;
+}
+
+.microsite-intro-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.microsite-banner {
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.microsite-banner-frame {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 2 / 1;
+  position: relative;
+  overflow: hidden;
+  background: #eef1f4;
+  display: grid;
+  place-items: start center;
+}
+
+.microsite-banner-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+.microsite-banner-copy {
+  position: relative;
+  z-index: 2;
+  width: min(920px, calc(100% - 48px));
+  padding: clamp(40px, 6vw, 72px) 0 clamp(24px, 4vw, 40px);
+  text-align: center;
+}
+
+.microsite-banner-copy h2 {
+  font-size: clamp(26px, 3.2vw, 44px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #27282e;
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+.microsite-banner-copy p {
+  font-size: clamp(14px, 1.15vw, 18px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #5c6478;
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.microsite-amenities {
+  background: #27282e;
+  padding: clamp(56px, 7vw, 96px) var(--pad);
+  text-align: center;
+}
+
+.microsite-amenities h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+
+.microsite-amenities-grid {
+  list-style: none;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 40px);
+}
+
+.microsite-amenities-grid li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(14px, 1.8vw, 20px);
+}
+
+.microsite-amenity-icon {
+  width: clamp(88px, 10vw, 112px);
+  height: clamp(88px, 10vw, 112px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.microsite-amenity-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.microsite-amenity-icon img:not([src]),
+.microsite-amenity-icon img[src=""] {
+  display: none;
+}
+
+.microsite-amenity-icon:has(img:not([src]), img[src=""]) {
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #f2f2f2 55%, #e4e4e4 100%);
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.9),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.microsite-amenities-grid span {
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--white);
+}
+
+.microsite-gallery {
+  width: 100%;
+  overflow: hidden;
+  background: #1a1a1c;
+}
+
+.microsite-gallery-frame {
+  display: grid;
+  grid-template-columns: 308fr 308fr 1305fr;
+  width: 100%;
+  max-height: 1080px;
+  height: clamp(360px, 56.25vw, 1080px);
+}
+
+.microsite-gallery-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  background: #2a2a2e;
+}
+
+.microsite-gallery-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.microsite-gallery-panel img:not([src]),
+.microsite-gallery-panel img[src=""] {
+  display: none;
+}
+
+.microsite-gallery-panel--narrow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  pointer-events: none;
+}
+
+.microsite-gallery-label {
+  position: absolute;
+  z-index: 2;
+  font-size: clamp(16px, 1.4vw, 22px);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.microsite-gallery-label--bottom {
+  bottom: clamp(28px, 4vw, 56px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.microsite-gallery-label--top {
+  top: clamp(28px, 4vw, 56px);
+  left: clamp(28px, 4vw, 56px);
+}
+
+.microsite-planning {
+  background: var(--white);
+  padding: clamp(56px, 7vw, 96px) var(--pad);
+}
+
+.microsite-planning-header {
+  text-align: center;
+  max-width: 52rem;
+  margin: 0 auto clamp(40px, 5vw, 64px);
+}
+
+.microsite-planning-header h2 {
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #27282e;
+  margin-bottom: clamp(12px, 1.5vw, 18px);
+}
+
+.microsite-planning-header p {
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #5c6478;
+  margin: 0;
+}
+
+.microsite-planning-frame {
+  width: min(100%, var(--page));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.38fr) minmax(0, 0.62fr);
+  gap: clamp(32px, 4vw, 64px);
+  align-items: center;
+}
+
+.microsite-planning-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.microsite-planning-copy h3 {
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #27282e;
+  margin-bottom: clamp(24px, 3vw, 32px);
+  width: 100%;
+  text-align: center;
+}
+
+.microsite-plot-sizes {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.microsite-plot-size {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 clamp(28px, 3.5vw, 44px);
+  border-right: 1px solid #d8dce3;
+}
+
+.microsite-plot-size:last-child {
+  border-right: 0;
+}
+
+.microsite-plot-value {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  line-height: 1;
+}
+
+.microsite-plot-number {
+  font-size: clamp(44px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #94b24a;
+}
+
+.microsite-plot-unit {
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #27282e;
+  margin-top: 0.4em;
+}
+
+.microsite-plot-dim {
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #27282e;
+  margin-top: 10px;
+}
+
+.microsite-planning-legend {
+  list-style: none;
+  counter-reset: planning-legend;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  gap: clamp(6px, 0.8vw, 10px);
+  width: fit-content;
+  text-align: left;
+}
+
+.microsite-planning-legend li {
+  counter-increment: planning-legend;
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #27282e;
+  padding-left: 1.75rem;
+  position: relative;
+}
+
+.microsite-planning-legend li::before {
+  content: counter(planning-legend) ".";
+  position: absolute;
+  left: 0;
+  font-weight: 500;
+  color: #27282e;
+}
+
+.microsite-planning-map {
+  min-height: clamp(280px, 32vw, 480px);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.microsite-planning-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.microsite-planning-map img:not([src]),
+.microsite-planning-map img[src=""] {
+  display: none;
+}
+
+.microsite-location {
+  background: #28282b;
+  padding: clamp(56px, 7vw, 96px) var(--pad);
+}
+
+.microsite-location-header {
+  text-align: center;
+  max-width: 52rem;
+  margin: 0 auto clamp(40px, 5vw, 64px);
+}
+
+.microsite-location-header h2 {
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin: 0;
+}
+
+.microsite-location-frame {
+  width: min(100%, var(--page));
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.microsite-location-map {
+  background: var(--white);
+  flex: 0 0 auto;
+  width: min(100%, 480px);
+  aspect-ratio: 4 / 3;
+  min-height: clamp(220px, 24vw, 340px);
+  overflow: hidden;
+}
+
+.microsite-location-map-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(220px, 24vw, 340px);
+  border: 0;
+}
+
+.microsite-location-accordion {
+  flex: 0 1 420px;
+  width: min(100%, 420px);
+  margin-left: 0;
+  align-self: center;
+}
+
+.microsite-location-accordion .about-accordion-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.microsite-location-accordion .about-accordion-item:first-child {
+  border-top: 0;
+}
+
+.microsite-location-accordion .about-accordion-item:last-child {
+  border-bottom: 0;
+}
+
+.microsite-location-accordion .about-accordion-trigger {
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 700;
+  padding: clamp(20px, 2.2vw, 28px) 0;
+}
+
+.microsite-location-accordion .about-accordion-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.microsite-location-accordion .about-accordion-panel p {
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 1100px) {
+  .microsite-intro-frame {
+    grid-template-columns: 1fr;
+    gap: clamp(32px, 4vw, 48px);
+  }
+
+  .microsite-intro-copy {
+    max-width: none;
+    margin-left: 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .microsite-intro-heading {
+    justify-content: flex-start;
+  }
+
+  .microsite-intro-copy h2,
+  .microsite-intro-copy p {
+    text-align: left;
+  }
+
+  .microsite-amenities-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .microsite-gallery-frame {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    max-height: none;
+  }
+
+  .microsite-gallery-panel--wide {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+  }
+
+  .microsite-gallery-panel--narrow {
+    aspect-ratio: 3 / 4;
+  }
+
+  .microsite-gallery-panel img {
+    position: absolute;
+    inset: 0;
+  }
+
+  .microsite-planning-frame {
+    grid-template-columns: 1fr;
+    gap: clamp(32px, 4vw, 48px);
+  }
+
+  .microsite-location-header h2 br {
+    display: none;
+  }
+
+  .microsite-location-frame {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .microsite-location-map,
+  .microsite-location-accordion {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .microsite-page .hero {
+    padding: 0;
+  }
+
+  .microsite-page .nav .nav-contact {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 500;
+  }
+
+  .microsite-page main > section[id],
+  .microsite-page .microsite-footer[id] {
+    scroll-margin-top: 72px;
+  }
+
+  .microsite-logo-img {
+    height: 44px;
+    max-width: 160px;
+  }
+
+  .microsite-hero-frame {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    height: auto;
+    max-height: none;
+  }
+
+  .microsite-hero-frame .hero-image {
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  .microsite-intro {
+    padding: clamp(32px, 6vw, 48px) var(--pad) clamp(32px, 6vw, 48px);
+  }
+
+  .microsite-intro-frame {
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 5vw, 40px);
+  }
+
+  .microsite-intro-copy {
+    max-width: none;
+    margin-left: 0;
+    align-items: flex-start;
+  }
+
+  .microsite-intro-heading {
+    justify-content: flex-start;
+  }
+
+  .microsite-intro-copy h2,
+  .microsite-intro-copy p {
+    text-align: left;
+  }
+
+  .microsite-intro-br {
+    display: none;
+  }
+
+  .microsite-intro-media {
+    width: 100%;
+  }
+
+  .microsite-banner {
+    padding: 0;
+  }
+
+  .microsite-banner-frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .microsite-banner-copy {
+    width: calc(100% - 32px);
+    padding-top: clamp(28px, 8vw, 48px);
+  }
+
+  .microsite-banner-copy h2 {
+    font-size: clamp(22px, 6vw, 30px);
+  }
+
+  .microsite-banner-copy p {
+    font-size: 14px;
+  }
+
+  .microsite-amenities {
+    padding: clamp(40px, 8vw, 56px) var(--pad);
+  }
+
+  .microsite-amenities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 6vw, 40px) clamp(16px, 4vw, 24px);
+  }
+
+  .microsite-gallery-frame {
+    grid-template-columns: 1fr;
+    max-height: none;
+    height: auto;
+  }
+
+  .microsite-gallery-panel {
+    aspect-ratio: 4 / 3;
+  }
+
+  .microsite-gallery-panel--wide {
+    aspect-ratio: 16 / 10;
+  }
+
+  .microsite-gallery-panel img {
+    position: absolute;
+    inset: 0;
+  }
+
+  .microsite-gallery-label {
+    white-space: normal;
+    text-align: center;
+    max-width: calc(100% - 32px);
+  }
+
+  .microsite-planning {
+    padding: clamp(40px, 8vw, 56px) var(--pad);
+  }
+
+  .microsite-planning-frame {
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 5vw, 40px);
+  }
+
+  .microsite-planning-map {
+    min-height: clamp(220px, 50vw, 320px);
+  }
+
+  .microsite-location {
+    padding: clamp(40px, 8vw, 56px) var(--pad);
+  }
+
+  .microsite-location-frame {
+    flex-direction: column;
+    gap: clamp(20px, 4vw, 28px);
+  }
+
+  .microsite-location-map {
+    max-width: none;
+    min-height: clamp(200px, 45vw, 280px);
+  }
+
+  .microsite-location-map-frame {
+    min-height: clamp(200px, 45vw, 280px);
+  }
+
+  .microsite-location-accordion {
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .microsite-footer-phone {
+    font-size: clamp(17px, 4.5vw, 20px);
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .microsite-hero-frame {
+    aspect-ratio: auto;
+    height: min(85vh, 540px);
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .microsite-hero-frame {
+    min-height: 52vw;
+  }
+
+  .microsite-amenities-grid {
+    gap: clamp(24px, 5vw, 32px) clamp(12px, 3vw, 20px);
+  }
+
+  .microsite-amenity-icon {
+    width: clamp(72px, 20vw, 88px);
+    height: clamp(72px, 20vw, 88px);
+  }
+
+  .microsite-plot-size {
+    padding: 0 clamp(12px, 3vw, 20px);
+  }
+
+  .microsite-plot-number {
+    font-size: clamp(36px, 10vw, 44px);
+  }
+
+  .microsite-bottom-band {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .microsite-page {
+    scroll-behavior: auto;
+  }
+}
+
+/* Microsite footer */
+.microsite-bottom-band {
+  width: 100%;
+  margin: 0;
+  padding: clamp(32px, 4vw, 48px) clamp(32px, 4vw, 48px) clamp(24px, 3vw, 32px);
+  background: var(--white);
+  box-sizing: border-box;
+}
+
+.microsite-bottom-band .microsite-footer {
+  padding: 0;
+  width: 100%;
+  background: transparent;
+}
+
+.microsite-footer-panel {
+  width: 100%;
+  min-height: 348px;
+  margin: 0;
+  background: #28282b;
+  color: var(--white);
+  padding: clamp(48px, 5vw, 72px) clamp(40px, 4.5vw, 72px);
+  display: grid;
+  grid-template-columns:
+    minmax(150px, 200px)
+    minmax(190px, 250px)
+    minmax(110px, 150px)
+    minmax(130px, 170px)
+    minmax(220px, 1fr);
+  gap: clamp(28px, 3.5vw, 56px);
+  align-items: start;
+  box-sizing: border-box;
+}
+
+.microsite-footer-brand {
+  display: flex;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.microsite-footer-logo {
+  width: min(100%, 232px);
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.microsite-footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.microsite-footer-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--white);
+}
+
+.microsite-footer-phone svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  opacity: 0.9;
+}
+
+.microsite-footer-email {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 10px;
+  width: 100%;
+  max-width: 220px;
+}
+
+.microsite-footer-links h4 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.microsite-footer-links a {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.microsite-footer-about {
+  padding-top: 4px;
+}
+
+.microsite-footer-about p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 20px;
+  max-width: 20rem;
+}
+
+.microsite-footer-socials {
+  display: flex;
+  gap: 14px;
+}
+
+.microsite-footer-socials a {
+  width: 16px;
+  height: 16px;
+}
+
+.microsite-footer-socials img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0) invert(1);
+  opacity: 0.88;
+}
+
+.microsite-copyright {
+  text-align: center;
+  padding: clamp(20px, 2.5vw, 28px) 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #8a9099;
+  background: transparent;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .microsite-footer-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: auto;
+    gap: clamp(28px, 4vw, 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .microsite-bottom-band {
+    padding: clamp(24px, 5vw, 32px) clamp(20px, 4vw, 24px) clamp(20px, 4vw, 28px);
+  }
+
+  .microsite-footer-panel {
+    grid-template-columns: 1fr;
+    padding: clamp(36px, 6vw, 48px) clamp(24px, 4vw, 32px);
+  }
+
+  .microsite-footer-logo {
+    width: min(100%, 200px);
+  }
+}
