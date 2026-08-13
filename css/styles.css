@@ -2417,75 +2417,86 @@ main > section,
 
 .microsite-intro {
   background: var(--white);
-  padding: clamp(48px, 6vw, 96px) var(--pad) clamp(48px, 6vw, 96px);
+  padding: clamp(48px, 6vw, 96px) var(--pad);
+  overflow: hidden;
 }
 
 .microsite-intro-frame {
   width: min(100%, var(--page));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(24px, 3vw, 48px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 3.5vw, 56px);
   align-items: center;
 }
 
 .microsite-intro-copy {
   color: var(--ink);
+  min-width: 0;
+  width: 100%;
+  max-width: 640px;
   margin-left: auto;
-  padding-right: clamp(0px, 2vw, 24px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  max-width: 420px;
-  text-align: right;
-}
-
-.microsite-intro-heading {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  gap: clamp(12px, 1.5vw, 20px);
-  margin-bottom: clamp(16px, 2vw, 24px);
-  width: 100%;
+  gap: clamp(14px, 1.8vw, 28px);
 }
 
 .microsite-intro-mark {
   flex-shrink: 0;
   display: block;
-  width: 40px;
-  height: 40px;
+  width: clamp(72px, 8vw, 117px);
+  height: auto;
+  aspect-ratio: 117 / 100;
   object-fit: contain;
   margin-top: 0.15em;
 }
 
+.microsite-intro-text {
+  min-width: 0;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: clamp(14px, 1.8vw, 22px);
+  text-align: right;
+}
+
 .microsite-intro-copy h2 {
-  font-size: clamp(24px, 2.8vw, 38px);
+  font-family: "Satoshi", var(--font), sans-serif;
+  font-size: clamp(26px, 2.6vw, 42px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.03em;
   color: #27282e;
   margin: 0;
   text-align: right;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .microsite-intro-copy p {
-  font-size: clamp(14px, 1.1vw, 16px);
+  font-family: "Satoshi", var(--font), sans-serif;
+  font-size: clamp(14px, 1.15vw, 16px);
   font-weight: 400;
-  line-height: 1.65;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 0;
   color: #5c6478;
-  width: 100%;
   margin: 0;
+  max-width: 100%;
   text-align: right;
+  overflow-wrap: break-word;
 }
 
 .microsite-intro-media {
-  width: min(720px, 100%);
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  max-width: min(820px, 100%);
+  justify-self: end;
+  min-width: 0;
   aspect-ratio: 1113 / 622;
   overflow: hidden;
   background: #eef1f4;
-  flex-shrink: 0;
 }
 
 .microsite-intro-media img {
@@ -2919,21 +2930,27 @@ main > section,
   color: rgba(255, 255, 255, 0.85);
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 1201px) {
+  .microsite-intro-br {
+    display: inline;
+  }
+}
+
+@media (max-width: 1200px) {
   .microsite-intro-frame {
     grid-template-columns: 1fr;
-    gap: clamp(32px, 4vw, 48px);
+    gap: clamp(28px, 4vw, 40px);
   }
 
   .microsite-intro-copy {
-    max-width: none;
-    margin-left: 0;
-    align-items: flex-start;
-    text-align: left;
+    max-width: 36rem;
+    margin: 0 auto;
+    justify-content: flex-start;
   }
 
-  .microsite-intro-heading {
-    justify-content: flex-start;
+  .microsite-intro-text {
+    align-items: flex-start;
+    text-align: left;
   }
 
   .microsite-intro-copy h2,
@@ -2941,6 +2958,17 @@ main > section,
     text-align: left;
   }
 
+  .microsite-intro-media {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .microsite-intro-br {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
   .microsite-amenities-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3022,30 +3050,31 @@ main > section,
   }
 
   .microsite-intro {
-    padding: clamp(32px, 6vw, 48px) var(--pad) clamp(32px, 6vw, 48px);
-  }
-
-  .microsite-intro-frame {
-    grid-template-columns: 1fr;
-    gap: clamp(28px, 5vw, 40px);
+    padding: clamp(32px, 6vw, 48px) var(--pad);
   }
 
   .microsite-intro-copy {
     max-width: none;
-    margin-left: 0;
+    flex-direction: column;
     align-items: flex-start;
+    gap: clamp(12px, 3vw, 18px);
   }
 
-  .microsite-intro-heading {
-    justify-content: flex-start;
+  .microsite-intro-mark {
+    width: clamp(56px, 16vw, 80px);
+    margin-top: 0;
   }
 
-  .microsite-intro-copy h2,
+  .microsite-intro-copy h2 {
+    font-size: clamp(24px, 6.5vw, 32px);
+  }
+
   .microsite-intro-copy p {
-    text-align: left;
+    font-size: clamp(14px, 3.8vw, 16px);
+    line-height: 1.6;
   }
 
-  .microsite-intro-br {
+  .microsite-intro-heading-br {
     display: none;
   }
 
