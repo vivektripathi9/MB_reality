@@ -50,6 +50,53 @@
   );
   setActive();
 
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const isInternalPageLink = (anchor) => {
+    if (!anchor || anchor.target === "_blank" || anchor.hasAttribute("download")) return false;
+    const href = anchor.getAttribute("href");
+    if (!href || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:")) {
+      return false;
+    }
+    let url;
+    try {
+      url = new URL(anchor.href, window.location.href);
+    } catch {
+      return false;
+    }
+    if (url.origin !== window.location.origin) return false;
+    const samePage =
+      url.pathname.replace(/\/$/, "") === window.location.pathname.replace(/\/$/, "") &&
+      url.search === window.location.search;
+    return !samePage;
+  };
+
+  if (!reduceMotion) {
+    document.addEventListener("click", (event) => {
+      const anchor = event.target.closest("a[href]");
+      if (!anchor || event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        return;
+      }
+      if (!isInternalPageLink(anchor)) return;
+      event.preventDefault();
+      if (document.body.classList.contains("is-leaving")) return;
+      document.body.classList.add("is-leaving");
+        window.setTimeout(() => {
+        window.location.href = anchor.href;
+      }, 150);
+    });
+
+    window.addEventListener("pageshow", (event) => {
+      document.body.classList.remove("is-leaving");
+      if (event.persisted) {
+        document.body.style.animation = "none";
+        requestAnimationFrame(() => {
+          document.body.style.animation = "";
+        });
+      }
+    });
+  }
+
   document.querySelectorAll(".about-accordion").forEach((accordion) => {
     accordion.querySelectorAll(".about-accordion-trigger").forEach((trigger) => {
       trigger.addEventListener("click", () => {
