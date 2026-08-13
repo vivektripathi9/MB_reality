@@ -1567,10 +1567,6 @@ main > section,
   margin-bottom: 24px;
 }
 
-.developments.is-hidden {
-  display: none;
-}
-
 .lap-media {
   position: relative;
   z-index: 1;
