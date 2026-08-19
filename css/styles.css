@@ -89,6 +89,7 @@
   --font: "Satoshi", "Segoe UI", sans-serif;
   --page: 1440px;
   --pad: clamp(20px, 5vw, 80px);
+  --header-h: 121px;
 }
 
 /* Breakpoints
@@ -386,20 +387,25 @@ main > section,
   background: var(--white);
 }
 
-/* Hero — 1800 × 1080 image frame */
+/* Hero — fits remaining viewport under the header */
 .hero {
   background: var(--bg);
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0 var(--pad) clamp(32px, 4vw, 64px);
+  align-items: stretch;
+  padding: 0 var(--pad);
   overflow: hidden;
+  height: calc(100svh - var(--header-h));
+  max-height: calc(100dvh - var(--header-h));
+  box-sizing: border-box;
 }
 
 .hero-frame {
   width: 1800px;
   max-width: 100%;
-  aspect-ratio: 1800 / 1080;
+  height: 100%;
+  max-height: 100%;
+  aspect-ratio: auto;
   overflow: hidden;
   position: relative;
   background: #020814;
@@ -752,7 +758,7 @@ main > section,
 /* Blogs — article */
 .blogs-article {
   background: var(--bg);
-  padding: 0 var(--pad) clamp(24px, 3vw, 40px);
+  padding: clamp(36px, 5vw, 64px) var(--pad) clamp(24px, 3vw, 40px);
 }
 
 .blogs-article-inner {
@@ -843,12 +849,31 @@ main > section,
 }
 
 @media (max-width: 767px) {
+  .blogs-article-inner > h1 {
+    font-size: clamp(22px, 6vw, 28px);
+    margin-bottom: 20px;
+  }
+
+  .blogs-article-date {
+    font-size: 13px;
+  }
+
+  .blogs-article-tags {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+  }
+
   .blogs-article-inner > h2,
   .blogs-article-inner > p,
   .blogs-article-inner > ul,
   .blogs-article-inner > ul li {
-    font-size: clamp(16px, 4.2vw, 24px);
-    line-height: 1.6375;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .blogs-article-inner > h2 {
+    margin-top: 20px;
   }
 }
 
@@ -1801,15 +1826,6 @@ main > section,
   background: var(--bg);
 }
 
-.spaces-heading {
-  text-align: center;
-  font-size: clamp(26px, 3vw, 36px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--white);
-  margin: 0 auto clamp(28px, 4vw, 48px);
-}
-
 .spaces-panel {
   width: min(100%, var(--page));
   margin: 0 auto;
@@ -1819,7 +1835,7 @@ main > section,
   color: var(--ink);
 }
 
-.spaces-panel h3 {
+.spaces-panel > h2 {
   font-size: clamp(24px, 2.8vw, 34px);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -2038,6 +2054,7 @@ main > section,
   font-size: clamp(24px, 2.8vw, 34px);
   font-weight: 700;
   margin-bottom: 10px;
+  color: var(--white);
 }
 
 .cta-inner p {
@@ -2238,12 +2255,12 @@ main > section,
     padding: clamp(36px, 5vw, 56px) clamp(20px, 4vw, 40px);
   }
 
-  .spaces-panel h3 {
+  .spaces-panel > h2 {
     font-size: clamp(26px, 4vw, 36px);
     margin-bottom: clamp(24px, 4vw, 36px);
   }
 
-  .spaces-panel h3 br {
+  .spaces-panel > h2 br {
     display: none;
   }
 
@@ -2312,13 +2329,33 @@ main > section,
     grid-template-columns: 1fr auto;
   }
 
-  .hero {
+  .hero,
+  .about-hero,
+  .blogs-hero,
+  .contact-hero {
     padding: 0 var(--pad) clamp(24px, 5vw, 40px);
+    height: auto;
+    max-height: none;
+  }
+
+  .microsite-page .hero {
+    background: var(--white);
+    padding: clamp(12px, 3vw, 20px) var(--pad) clamp(24px, 5vw, 40px);
+    height: auto;
+    max-height: none;
   }
 
   .hero-frame {
+    width: 100%;
     aspect-ratio: 4 / 5;
     min-height: 380px;
+    height: auto;
+    max-height: calc(100dvh - 112px);
+  }
+
+  .hero-image {
+    object-fit: cover;
+    object-position: center;
   }
 
   .hero-copy {
@@ -2326,15 +2363,20 @@ main > section,
     padding: 16px 0;
   }
 
-  .hero-copy h1 {
+  .hero-copy h1,
+  .blogs-hero-copy h1,
+  .about-hero-copy h1,
+  .contact-hero-copy h1 {
     white-space: normal;
     font-size: clamp(22px, 6.5vw, 34px);
+    line-height: 1.2;
     margin-bottom: 12px;
   }
 
   .hero-copy p {
     font-size: 14px;
     line-height: 1.6;
+    max-width: 36rem;
   }
 
   .belief {
@@ -2416,11 +2458,11 @@ main > section,
     padding: clamp(28px, 6vw, 40px) clamp(16px, 4vw, 24px);
   }
 
-  .spaces-panel h3 br {
+  .spaces-panel > h2 br {
     display: none;
   }
 
-  .spaces-panel h3 {
+  .spaces-panel > h2 {
     font-size: clamp(22px, 6vw, 30px);
     margin-bottom: 24px;
   }
@@ -2486,6 +2528,7 @@ main > section,
 @media (min-width: 768px) and (max-width: 1199px) {
   :root {
     --pad: clamp(24px, 3.2vw, 48px);
+    --header-h: 90px;
   }
 
   .header-inner {
@@ -2618,49 +2661,40 @@ main > section,
 }
 
 .microsite-page .hero {
-  padding: 0;
+  background: var(--white);
+  padding-top: clamp(12px, 1.6vw, 24px);
+}
+
+.microsite-page .hero-frame {
+  background: var(--white);
 }
 
 .microsite-page main > section[id],
-.microsite-page .microsite-footer[id] {
+.microsite-page .site-footer[id] {
   scroll-margin-top: 96px;
 }
 
-.microsite-page .site-header {
-  background: #27282e;
+.microsite-page .bottom-band {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(24px, 4vw, 40px) var(--pad) 4px;
+  background: var(--bg);
+  box-sizing: border-box;
 }
 
-.microsite-page.nav-open .nav,
-.microsite-page .site-header.nav-open .nav {
-  background: #27282e;
+.microsite-page .bottom-band .cta,
+.microsite-page .bottom-band .site-footer {
+  width: min(100%, 1800px);
+  margin: 0 auto;
 }
 
-.microsite-logo-img {
-  width: auto;
-  height: 56px;
-  max-width: 200px;
+.microsite-page .copyright {
+  background: var(--bg);
 }
 
 .nav-contact {
   display: none;
-}
-
-.microsite-hero {
-  padding: 0;
-}
-
-.microsite-hero-frame {
-  width: 100%;
-  max-width: none;
-  aspect-ratio: 16 / 9;
-  min-height: clamp(320px, 56vw, 720px);
-  background: #1a1510;
-  overflow: hidden;
-}
-
-.microsite-hero-frame .hero-image {
-  object-fit: cover;
-  object-position: center center;
 }
 
 .microsite-hero-copy {
@@ -3345,37 +3379,9 @@ main > section,
 }
 
 @media (max-width: 767px) {
-  .microsite-page .hero {
-    padding: 0;
-  }
-
-  .microsite-page .nav .nav-contact {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    font-weight: 500;
-  }
-
   .microsite-page main > section[id],
-  .microsite-page .microsite-footer[id] {
+  .microsite-page .site-footer[id] {
     scroll-margin-top: 72px;
-  }
-
-  .microsite-logo-img {
-    height: 44px;
-    max-width: 160px;
-  }
-
-  .microsite-hero-frame {
-    aspect-ratio: 16 / 9;
-    min-height: 0;
-    height: auto;
-    max-height: none;
-  }
-
-  .microsite-hero-frame .hero-image {
-    object-fit: contain;
-    object-position: center top;
   }
 
   .microsite-intro {
@@ -3505,18 +3511,15 @@ main > section,
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
-  .microsite-hero-frame {
-    aspect-ratio: auto;
-    height: min(85vh, 540px);
-    min-height: 0;
+  .hero-frame {
+    aspect-ratio: 16 / 9;
+    min-height: 220px;
+    height: auto;
+    max-height: calc(100dvh - 96px);
   }
 }
 
 @media (max-width: 480px) {
-  .microsite-hero-frame {
-    min-height: 52vw;
-  }
-
   .microsite-amenities-grid {
     gap: clamp(24px, 5vw, 32px) clamp(12px, 3vw, 20px);
   }
