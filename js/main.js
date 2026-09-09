@@ -8,6 +8,7 @@
       const open = header.classList.toggle("nav-open");
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      updateHeaderScroll();
     });
 
     navLinks.forEach((link) => {
@@ -15,9 +16,16 @@
         header.classList.remove("nav-open");
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Open menu");
+        updateHeaderScroll();
       });
     });
   }
+
+  const updateHeaderScroll = () => {
+    if (!header) return;
+    const atTop = window.scrollY <= 24;
+    header.classList.toggle("is-hidden", !atTop && !header.classList.contains("nav-open"));
+  };
 
   const sections = document.querySelectorAll("section[id], footer[id]");
   const setActive = () => {
@@ -42,12 +50,14 @@
       if (scrollTick) return;
       scrollTick = true;
       requestAnimationFrame(() => {
+        updateHeaderScroll();
         setActive();
         scrollTick = false;
       });
     },
     { passive: true }
   );
+  updateHeaderScroll();
   setActive();
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -113,4 +123,74 @@
       });
     });
   });
+
+  const revealSections = document.querySelectorAll(".belief, .lap, .spaces, .blogs--featured");
+  if (revealSections.length) {
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      revealSections.forEach((section) => section.classList.add("is-inview"));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-inview");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+      );
+      revealSections.forEach((section) => revealObserver.observe(section));
+    }
+  }
+
+  const spacesCards = document.querySelectorAll(".spaces-card[data-spaces-index]");
+  if (spacesCards.length && !reduceMotion) {
+    let focusIndex = 0;
+    const total = 6;
+    const setFocus = (index) => {
+      spacesCards.forEach((card) => {
+        card.classList.toggle("is-focus", Number(card.dataset.spacesIndex) === index);
+      });
+    };
+    setFocus(focusIndex);
+    window.setInterval(() => {
+      focusIndex = (focusIndex + 1) % total;
+      setFocus(focusIndex);
+    }, 3200);
+  }
+
+  const blogsFeatured = document.querySelector(".blogs--featured");
+  if (blogsFeatured) {
+    const slides = [...blogsFeatured.querySelectorAll(".blogs-slide")];
+    const dots = [...blogsFeatured.querySelectorAll(".blogs-dot")];
+    let active = 0;
+
+    const showSlide = (index) => {
+      active = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const on = i === active;
+        slide.hidden = !on;
+        slide.classList.remove("is-active");
+        if (on) {
+          // Restart stagger animation on each change
+          void slide.offsetWidth;
+          slide.classList.add("is-active");
+        }
+      });
+      dots.forEach((dot, i) => {
+        const on = i === active;
+        dot.classList.toggle("is-active", on);
+        dot.setAttribute("aria-selected", String(on));
+      });
+    };
+
+    blogsFeatured.addEventListener("click", (event) => {
+      const prev = event.target.closest(".blogs-nav-prev");
+      const next = event.target.closest(".blogs-nav-next");
+      const dot = event.target.closest(".blogs-dot");
+      if (prev) showSlide(active - 1);
+      if (next) showSlide(active + 1);
+      if (dot && dot.dataset.blogIndex != null) showSlide(Number(dot.dataset.blogIndex));
+    });
+  }
 })();

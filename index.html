@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MB Realty — Building Places That Inspire Better Living</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -41,8 +47,15 @@
             width="1800"
             height="1080"
           />
-          <div class="hero-copy">
-            <h1>Building Places That Inspire Better Living.</h1>
+          <div class="hero-copy home-hero-copy">
+            <h1 class="home-hero-title">
+              <span class="home-hero-line">Building</span>
+              <span class="home-hero-line">Places That</span>
+              <span class="home-hero-line">Inspire Better</span>
+              <span class="home-hero-script" aria-label="Living">
+                <span class="home-hero-script-type">Living</span>
+              </span>
+            </h1>
             <p>
               At MB Realty, we create thoughtfully planned residential communities that blend modern
               design, strategic locations, and lasting value.
@@ -53,14 +66,6 @@
 
       <section class="belief" id="about">
         <div class="belief-frame">
-          <div class="belief-media">
-            <img
-              src="contact_asset/Sec_MB.png"
-              alt="Planning a master plan over a landscaped community"
-              width="800"
-              height="600"
-            />
-          </div>
           <div class="belief-copy">
             <h2>Building Spaces. Creating Possibilities.</h2>
             <p>
@@ -74,7 +79,22 @@
             </p>
             <p>We don't just develop properties.</p>
             <p>We create places designed for better living.</p>
-            <a class="btn-dark" href="about.html">Know More</a>
+            <a class="belief-cta" href="about.html">
+              <span>Know More</span>
+              <span class="belief-cta-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div class="belief-media">
+            <img
+              src="contact_asset/Sec_MB.png"
+              alt="Planning a master plan over a landscaped community"
+              width="800"
+              height="600"
+            />
           </div>
         </div>
       </section>
@@ -159,115 +179,289 @@
 
       <section class="spaces" id="why-mb">
         <div class="spaces-panel">
-          <h2>Built on What Matters</h2>
-          <div class="spaces-grid spaces-grid--why">
-            <article>
-              <span>01</span>
-              <h3>Thoughtful Locations</h3>
-              <p class="spaces-card-copy">
-                We believe the right location is the foundation of long-term real estate value.
-              </p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Purposeful Design</h3>
-              <p class="spaces-card-copy">
-                Every space should have a reason to exist and a purpose to serve.
-              </p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>Quality Focus</h3>
-              <p class="spaces-card-copy">
-                We pay attention to the details that influence everyday experience.
-              </p>
-            </article>
-            <article>
-              <span>04</span>
-              <h3>Transparent Approach</h3>
-              <p class="spaces-card-copy">
-                We believe trust is built through clarity, communication and consistency.
-              </p>
-            </article>
-            <article>
-              <span>05</span>
-              <h3>Customer First</h3>
-              <p class="spaces-card-copy">
-                Our relationship with customers goes beyond the transaction.
-              </p>
-            </article>
-            <article>
-              <span>06</span>
-              <h3>Long-Term Perspective</h3>
-              <p class="spaces-card-copy">
-                We look beyond today's requirements to create spaces prepared for tomorrow.
-              </p>
-            </article>
+          <h2 class="spaces-title">
+            <span class="spaces-title-line">Built on</span>
+            <span class="spaces-title-script">What Matters</span>
+          </h2>
+          <div class="spaces-marquee" aria-label="Built on what matters">
+            <div class="spaces-track">
+              <article class="spaces-card spaces-card--1" data-spaces-index="0">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-01.png" alt="" width="640" height="400" />
+                </div>
+                <span>01</span>
+                <div class="spaces-card-body">
+                  <h3>Thoughtful Locations</h3>
+                  <p class="spaces-card-copy">
+                    We believe the right location is the foundation of long-term real estate value.
+                  </p>
+                </div>
+              </article>
+              <article class="spaces-card spaces-card--2" data-spaces-index="1">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-02.png" alt="" width="640" height="400" />
+                </div>
+                <span>02</span>
+                <div class="spaces-card-body">
+                  <h3>Purposeful Design</h3>
+                  <p class="spaces-card-copy">
+                    Every space should have a reason to exist and a purpose to serve.
+                  </p>
+                </div>
+              </article>
+              <article class="spaces-card spaces-card--3" data-spaces-index="2">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-03.png" alt="" width="640" height="400" />
+                </div>
+                <span>03</span>
+                <div class="spaces-card-body">
+                  <h3>Quality Focus</h3>
+                  <p class="spaces-card-copy">
+                    We pay attention to the details that influence everyday experience.
+                  </p>
+                </div>
+              </article>
+              <article class="spaces-card spaces-card--4" data-spaces-index="3">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-04.png" alt="" width="520" height="720" />
+                </div>
+                <span>04</span>
+                <div class="spaces-card-body">
+                  <h3>Transparent Approach</h3>
+                  <p class="spaces-card-copy">
+                    We believe trust is built through clarity, communication and consistency.
+                  </p>
+                </div>
+              </article>
+              <article class="spaces-card spaces-card--5" data-spaces-index="4">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-05.png" alt="" width="640" height="400" />
+                </div>
+                <span>05</span>
+                <div class="spaces-card-body">
+                  <h3>Customer First</h3>
+                  <p class="spaces-card-copy">
+                    Our relationship with customers goes beyond the transaction.
+                  </p>
+                </div>
+              </article>
+              <article class="spaces-card spaces-card--6" data-spaces-index="5">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-06.png" alt="" width="640" height="400" />
+                </div>
+                <span>06</span>
+                <div class="spaces-card-body">
+                  <h3>Long-Term Perspective</h3>
+                  <p class="spaces-card-copy">
+                    We look beyond today's requirements to create spaces prepared for tomorrow.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Duplicate set for seamless loop -->
+              <article class="spaces-card spaces-card--1" data-spaces-index="0" aria-hidden="true">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-01.png" alt="" width="640" height="400" />
+                </div>
+                <span>01</span>
+                <div class="spaces-card-body">
+                  <h3>Thoughtful Locations</h3>
+                  <p class="spaces-card-copy">
+                    We believe the right location is the foundation of long-term real estate value.
+                  </p>
+                </div>
+              </article>
+              <article class="spaces-card spaces-card--2" data-spaces-index="1" aria-hidden="true">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-02.png" alt="" width="640" height="400" />
+                </div>
+                <span>02</span>
+                <div class="spaces-card-body">
+                  <h3>Purposeful Design</h3>
+                  <p class="spaces-card-copy">
+                    Every space should have a reason to exist and a purpose to serve.
+                  </p>
+                </div>
+              </article>
+              <article class="spaces-card spaces-card--3" data-spaces-index="2" aria-hidden="true">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-03.png" alt="" width="640" height="400" />
+                </div>
+                <span>03</span>
+                <div class="spaces-card-body">
+                  <h3>Quality Focus</h3>
+                  <p class="spaces-card-copy">
+                    We pay attention to the details that influence everyday experience.
+                  </p>
+                </div>
+              </article>
+              <article class="spaces-card spaces-card--4" data-spaces-index="3" aria-hidden="true">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-04.png" alt="" width="520" height="720" />
+                </div>
+                <span>04</span>
+                <div class="spaces-card-body">
+                  <h3>Transparent Approach</h3>
+                  <p class="spaces-card-copy">
+                    We believe trust is built through clarity, communication and consistency.
+                  </p>
+                </div>
+              </article>
+              <article class="spaces-card spaces-card--5" data-spaces-index="4" aria-hidden="true">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-05.png" alt="" width="640" height="400" />
+                </div>
+                <span>05</span>
+                <div class="spaces-card-body">
+                  <h3>Customer First</h3>
+                  <p class="spaces-card-copy">
+                    Our relationship with customers goes beyond the transaction.
+                  </p>
+                </div>
+              </article>
+              <article class="spaces-card spaces-card--6" data-spaces-index="5" aria-hidden="true">
+                <div class="spaces-card-media">
+                  <img src="assets/spaces/spaces-06.png" alt="" width="640" height="400" />
+                </div>
+                <span>06</span>
+                <div class="spaces-card-body">
+                  <h3>Long-Term Perspective</h3>
+                  <p class="spaces-card-copy">
+                    We look beyond today's requirements to create spaces prepared for tomorrow.
+                  </p>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="blogs" id="faqs">
+      <section class="blogs blogs--featured" id="faqs">
         <div class="blogs-decor blogs-decor--left" aria-hidden="true">
           <img src="Home_asset/Frame%2029%20(3).svg" alt="" width="394" height="361" />
         </div>
         <div class="blogs-decor blogs-decor--right" aria-hidden="true">
           <img src="Home_asset/Frame%2030.svg" alt="" width="392" height="361" />
         </div>
-        <h2>Blogs</h2>
-        <div class="blog-grid">
-          <article>
-            <div class="blog-media">
-              <img
-                src="contact_asset/container%20(3).jpeg"
-                alt=""
-                width="372"
-                height="245"
-              />
+        <div class="blogs-featured-inner">
+          <h2 class="blogs-featured-title">
+            <span class="blogs-featured-kicker">Latest</span>
+            <span class="blogs-featured-script" aria-label="Blogs">
+              <span class="blogs-featured-script-type">Blogs</span>
+            </span>
+          </h2>
+
+          <div class="blogs-featured-layout">
+            <div class="blogs-featured-dots" role="tablist" aria-label="Blog slides">
+              <button type="button" class="blogs-dot is-active" role="tab" aria-selected="true" aria-label="Blog 1" data-blog-index="0"></button>
+              <button type="button" class="blogs-dot" role="tab" aria-selected="false" aria-label="Blog 2" data-blog-index="1"></button>
+              <button type="button" class="blogs-dot" role="tab" aria-selected="false" aria-label="Blog 3" data-blog-index="2"></button>
             </div>
-            <h3>Why East Bengaluru Is Emerging as a Residential Destination</h3>
-            <p>
-              Bengaluru's growth has expanded far beyond the traditional city centre. Today, East
-              Bengaluru has emerged as one of the city's most important residential and commercial
-              corridors.
-            </p>
-            <a href="blogs.html">Read More &gt;</a>
-          </article>
-          <article>
-            <div class="blog-media">
-              <img
-                src="contact_asset/container%20(1).jpeg"
-                alt=""
-                width="372"
-                height="245"
-              />
+
+            <div class="blogs-featured-stage">
+              <article class="blogs-slide is-active" data-blog-slide="0">
+                <div class="blogs-slide-media">
+                  <img
+                    src="contact_asset/container%20(3).jpeg"
+                    alt=""
+                    width="520"
+                    height="640"
+                  />
+                </div>
+                <div class="blogs-slide-copy">
+                  <h3>Why East Bengaluru Is Emerging as a Residential Destination</h3>
+                  <p class="blogs-slide-meta">Market Insights</p>
+                  <p>
+                    Bengaluru's growth has expanded far beyond the traditional city centre. Today, East
+                    Bengaluru has emerged as one of the city's most important residential and commercial
+                    corridors.
+                  </p>
+                  <div class="blogs-slide-nav">
+                    <button type="button" class="blogs-nav-btn blogs-nav-prev" aria-label="Previous blog">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                    <span class="blogs-nav-divider" aria-hidden="true"></span>
+                    <button type="button" class="blogs-nav-btn blogs-nav-next" aria-label="Next blog">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                  <a class="blogs-slide-link" href="blogs.html">Read More</a>
+                </div>
+              </article>
+
+              <article class="blogs-slide" data-blog-slide="1" hidden>
+                <div class="blogs-slide-media">
+                  <img
+                    src="contact_asset/container%20(1).jpeg"
+                    alt=""
+                    width="520"
+                    height="640"
+                  />
+                </div>
+                <div class="blogs-slide-copy">
+                  <h3>Villa Plots vs Apartments: Which Is Better for Your Dream Home?</h3>
+                  <p class="blogs-slide-meta">Buying Guide</p>
+                  <p>
+                    When buying a home in Bengaluru, one of the biggest decisions is choosing between an
+                    apartment and a plot.
+                  </p>
+                  <div class="blogs-slide-nav">
+                    <button type="button" class="blogs-nav-btn blogs-nav-prev" aria-label="Previous blog">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                    <span class="blogs-nav-divider" aria-hidden="true"></span>
+                    <button type="button" class="blogs-nav-btn blogs-nav-next" aria-label="Next blog">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                  <a class="blogs-slide-link" href="blogs.html">Read More</a>
+                </div>
+              </article>
+
+              <article class="blogs-slide" data-blog-slide="2" hidden>
+                <div class="blogs-slide-media">
+                  <img
+                    src="contact_asset/container%20(2).jpeg"
+                    alt=""
+                    width="520"
+                    height="640"
+                  />
+                </div>
+                <div class="blogs-slide-copy">
+                  <h3>The Complete Guide to Buying a Residential Plot in Bengaluru</h3>
+                  <p class="blogs-slide-meta">Complete Guide</p>
+                  <p>
+                    Buying a residential plot is an important long-term decision. Unlike purchasing a ready
+                    apartment, buying land requires careful evaluation of title, approvals, infrastructure,
+                    location and future potential.
+                  </p>
+                  <div class="blogs-slide-nav">
+                    <button type="button" class="blogs-nav-btn blogs-nav-prev" aria-label="Previous blog">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                    <span class="blogs-nav-divider" aria-hidden="true"></span>
+                    <button type="button" class="blogs-nav-btn blogs-nav-next" aria-label="Next blog">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                  <a class="blogs-slide-link" href="blogs.html">Read More</a>
+                </div>
+              </article>
             </div>
-            <h3>Villa Plots vs Apartments: Which Is Better for Your Dream Home?</h3>
-            <p>
-              When buying a home in Bengaluru, one of the biggest decisions is choosing between an
-              apartment and a plot.
-            </p>
-            <a href="blogs.html">Read More &gt;</a>
-          </article>
-          <article>
-            <div class="blog-media">
-              <img
-                src="contact_asset/container%20(2).jpeg"
-                alt=""
-                width="372"
-                height="245"
-              />
-            </div>
-            <h3>The Complete Guide to Buying a Residential Plot in Bengaluru</h3>
-            <p>
-              Buying a residential plot is an important long-term decision. Unlike purchasing a ready
-              apartment, buying land requires careful evaluation of title, approvals, infrastructure,
-              location and future potential.
-            </p>
-            <a href="blogs.html">Read More &gt;</a>
-          </article>
+          </div>
         </div>
-        <a class="btn-light blog-all" href="blogs.html">View All</a>
       </section>
 
       <div class="bottom-band">
