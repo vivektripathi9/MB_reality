@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
@@ -42,86 +42,94 @@
         <div class="hero-frame">
           <img
             class="hero-image"
-            src="assets/Screenshot%202026-08-19%20154135.png"
-            alt="Aerial view of a residential estate with location pin"
+            src="assets/fonts/satoshi/2022PB63_7179-5-scaled.jpg"
+            alt="City skyline at golden hour"
             width="1800"
             height="1080"
           />
-          <div class="hero-copy about-hero-copy">
-            <h1>Creating Real Estate With Purpose</h1>
+          <div class="hero-copy home-hero-copy">
+            <h1 class="home-hero-title">
+              <span class="home-hero-line">Creating</span>
+              <span class="home-hero-line">Real Estate</span>
+              <span class="home-hero-line">With</span>
+              <span class="home-hero-script" aria-label="Purpose">
+                <span class="home-hero-script-type">Purpose</span>
+              </span>
+            </h1>
           </div>
         </div>
       </section>
 
       <div class="about-bridge">
         <section class="about-vision">
+          <div class="about-vision-spotlight" aria-hidden="true"></div>
           <div class="about-vision-inner">
-            <div class="about-vision-copy">
-              <h2>About MB Realty</h2>
-              <p>
-                Real estate is one of the most significant decisions people make in their lifetime.
-                At MB Realty, we understand the responsibility that comes with creating spaces that
-                become homes, workplaces and long-term investments. Our approach brings together
-                thoughtful planning, contemporary design, quality construction and attention to the
-                details that matter. From selecting the right location to planning spaces around
-                real human needs, we strive to create developments that remain relevant beyond the
-                moment they are delivered. Our philosophy is simple: create better spaces, deliver
-                meaningful experiences and build lasting value.
-              </p>
+            <div class="about-vision-heading">
+              <span class="about-vision-watermark" aria-hidden="true">About</span>
+              <h2 class="about-vision-title">
+                <span class="about-vision-sr">About </span>
+                <span class="about-vision-display">MB Realty</span>
+              </h2>
             </div>
-            <div class="about-vision-media">
-              <div class="about-vision-media-wide">
-                <img
-                  src="contact_asset/Screenshot%202026-08-18%20214841.png"
-                  alt="Children's play area in a landscaped community"
-                  width="1149"
-                  height="708"
-                />
-              </div>
-              <div class="about-vision-media-tall">
-                <img
-                  src="contact_asset/Screenshot%202026-08-18%20215024.png"
-                  alt="Tree-lined pedestrian walkway with seating"
-                  width="622"
-                  height="708"
-                />
-                <div class="about-experience-decor" aria-hidden="true">
-                  <img
-                    src="about_asset/Frame%2029%20(6).svg"
-                    alt=""
-                    width="385"
-                    height="501"
-                  />
-                </div>
-              </div>
+            <div class="about-vision-copy">
+              <p>
+                At MB Realty, we believe the value of real estate begins with the right location and
+                grows through thoughtful development.
+              </p>
+              <p>
+                We are a real estate development company focused on creating well-planned properties
+                in locations with strong potential for growth. Our approach combines careful land
+                selection, thoughtful planning, quality development and a clear understanding of what
+                today's property buyers are looking for.
+              </p>
+              <p>
+                Our current focus is on plotted developments, creating opportunities for individuals
+                and families to invest in land that offers both flexibility and long-term potential.
+                As we grow, we are also building a pipeline of upcoming projects across promising
+                locations.
+              </p>
+              <p>
+                Transparency, thoughtful development and customer value are at the heart of how we
+                work. We believe that a successful real estate project is not simply about developing
+                land—it is about creating an opportunity that can appreciate with the growth of its
+                surroundings.
+              </p>
+              <p>
+                With every project, our aim is to create spaces with purpose, opportunities with
+                potential and value that lasts.
+              </p>
             </div>
           </div>
         </section>
 
         <section class="about-experience">
           <div class="about-experience-inner">
-            <div class="about-experience-media">
-              <span class="about-experience-frame" aria-hidden="true"></span>
-              <div class="about-experience-photo">
-                <img
-                  src="contact_asset/Screenshot%202026-08-18%20215139.png"
-                  alt="Community playground with swings and landscaped park"
-                  width="829"
-                  height="853"
-                />
+            <h2 class="about-experience-title">
+              <span class="about-experience-line">We believe real estate is about creating</span>
+              <span class="about-experience-line about-experience-line--accent">
+                <span class="about-experience-accent">experiences,</span>
+                <span class="about-experience-rest"> not just structures.</span>
+              </span>
+            </h2>
+
+            <div class="about-experience-body">
+              <div class="about-experience-media">
+                <span class="about-experience-frame" aria-hidden="true"></span>
+                <div class="about-experience-photo">
+                  <img
+                    src="contact_asset/Screenshot%202026-08-18%20215139.png"
+                    alt="Community playground with swings and landscaped park"
+                    width="829"
+                    height="853"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="about-experience-content">
-              <h2>
-                We believe real estate is<br />
-                about creating<br />
-                experiences, not just<br />
-                structures.
-              </h2>
-              <div class="about-accordion">
-                <div class="about-accordion-item is-open">
+
+              <div class="about-accordion" role="list">
+                <div class="about-accordion-item is-open" role="listitem">
                   <button class="about-accordion-trigger" type="button" aria-expanded="true">
-                    <span>Who we are</span>
+                    <span class="about-accordion-num">01</span>
+                    <span class="about-accordion-label">Who we are</span>
                     <span class="about-accordion-icon" aria-hidden="true"></span>
                   </button>
                   <div class="about-accordion-panel">
@@ -131,9 +139,10 @@
                     </p>
                   </div>
                 </div>
-                <div class="about-accordion-item">
+                <div class="about-accordion-item" role="listitem">
                   <button class="about-accordion-trigger" type="button" aria-expanded="false">
-                    <span>What We Do</span>
+                    <span class="about-accordion-num">02</span>
+                    <span class="about-accordion-label">What We Do</span>
                     <span class="about-accordion-icon" aria-hidden="true"></span>
                   </button>
                   <div class="about-accordion-panel">
@@ -144,14 +153,15 @@
                     </p>
                   </div>
                 </div>
-                <div class="about-accordion-item">
+                <div class="about-accordion-item" role="listitem">
                   <button class="about-accordion-trigger" type="button" aria-expanded="false">
-                    <span>Our Mission</span>
+                    <span class="about-accordion-num">03</span>
+                    <span class="about-accordion-label">Our Mission</span>
                     <span class="about-accordion-icon" aria-hidden="true"></span>
                   </button>
                   <div class="about-accordion-panel">
                     <p>
-                      <strong>Building With Purpose. Delivering With Integrity.</strong><br />
+                      <strong>Building With Purpose. Delivering With Integrity.</strong>
                       To develop high-quality residential and commercial spaces through thoughtful
                       planning, innovative design, responsible development and a customer-first
                       approach — creating environments that inspire better living, working and
@@ -159,14 +169,15 @@
                     </p>
                   </div>
                 </div>
-                <div class="about-accordion-item">
+                <div class="about-accordion-item" role="listitem">
                   <button class="about-accordion-trigger" type="button" aria-expanded="false">
-                    <span>Our Vision</span>
+                    <span class="about-accordion-num">04</span>
+                    <span class="about-accordion-label">Our Vision</span>
                     <span class="about-accordion-icon" aria-hidden="true"></span>
                   </button>
                   <div class="about-accordion-panel">
                     <p>
-                      <strong>Shaping Better Spaces for a Better Future</strong><br />
+                      <strong>Shaping Better Spaces for a Better Future</strong>
                       To become a trusted and forward-thinking real estate company, creating
                       thoughtfully designed spaces that enhance lifestyles, strengthen communities
                       and deliver lasting value for generations to come.
@@ -179,93 +190,120 @@
         </section>
       </div>
 
-      <section class="about-team">
-        <div class="about-team-panel">
-          <h2>Our Team</h2>
-          <div class="about-team-grid">
-            <article class="about-team-card">
-              <div class="about-team-photo"></div>
-              <div class="about-team-info">
-                <h3>Name</h3>
-                <p>Designation</p>
-              </div>
-            </article>
-            <article class="about-team-card">
-              <div class="about-team-photo"></div>
-              <div class="about-team-info">
-                <h3>Name</h3>
-                <p>Designation</p>
-              </div>
-            </article>
-            <article class="about-team-card">
-              <div class="about-team-photo"></div>
-              <div class="about-team-info">
-                <h3>Name</h3>
-                <p>Designation</p>
-              </div>
-            </article>
+      <section class="about-team" aria-label="Our Team">
+        <div class="about-team-layout">
+          <aside class="about-team-rail">
+            <h2 class="about-team-title">
+              <span>Our</span>
+              <span>Team</span>
+            </h2>
+            <div class="about-team-nav">
+              <button type="button" class="about-team-btn about-team-prev" aria-label="Previous team members">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button type="button" class="about-team-btn about-team-next" aria-label="Next team members">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </aside>
+          <div class="about-team-stage">
+            <div class="about-team-track">
+              <article class="about-team-card">
+                <div class="about-team-photo" role="img" aria-label="Team member"></div>
+                <div class="about-team-info">
+                  <h3>Name</h3>
+                  <p>Designation</p>
+                </div>
+              </article>
+              <article class="about-team-card">
+                <div class="about-team-photo" role="img" aria-label="Team member"></div>
+                <div class="about-team-info">
+                  <h3>Name</h3>
+                  <p>Designation</p>
+                </div>
+              </article>
+              <article class="about-team-card">
+                <div class="about-team-photo" role="img" aria-label="Team member"></div>
+                <div class="about-team-info">
+                  <h3>Name</h3>
+                  <p>Designation</p>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="about-testimonials">
+      <section class="about-testimonials" aria-label="Testimonials">
         <div class="about-testimonials-inner">
-          <h2>What Our Customers Say</h2>
-          <article class="about-testimonial-card">
-            <p>
-              From the initial enquiry to the final stages, the entire experience with MB Realty was
-              smooth and professional. The team was responsive, transparent and always available to
-              answer our questions. We are very happy with our decision.
-            </p>
-            <div class="about-testimonial-meta">
-              <h3>A Smooth and Transparent Experience</h3>
-              <div class="about-testimonial-stars" aria-label="5 out of 5 stars"><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /></div>
-            </div>
-          </article>
-          <article class="about-testimonial-card">
-            <p>
-              What impressed us most was the attention to detail and the overall planning. MB Realty
-              has clearly focused on creating a development that is practical, well-designed and
-              comfortable for families. We are extremely pleased with our investment.
-            </p>
-            <div class="about-testimonial-meta">
-              <h3>Thoughtful Planning and Quality</h3>
-              <div class="about-testimonial-stars" aria-label="5 out of 5 stars"><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /></div>
-            </div>
-          </article>
-          <article class="about-testimonial-card">
-            <p>
-              Buying property is a major decision, and we wanted a developer we could trust. The team
-              at MB Realty made the process simple and gave us confidence at every stage. We are glad
-              we chose MB Realty.
-            </p>
-            <div class="about-testimonial-meta">
-              <h3>A Decision We Feel Confident About</h3>
-              <div class="about-testimonial-stars" aria-label="5 out of 5 stars"><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /></div>
-            </div>
-          </article>
-          <article class="about-testimonial-card">
-            <p>
-              The team was approachable, knowledgeable and professional throughout our journey. They
-              understood our requirements, explained everything clearly and ensured that the process
-              was comfortable for us. It has been a very positive experience.
-            </p>
-            <div class="about-testimonial-meta">
-              <h3>Professional From Start to Finish</h3>
-              <div class="about-testimonial-stars" aria-label="5 out of 5 stars"><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /></div>
-            </div>
-          </article>
-          <article class="about-testimonial-card">
-            <p>
-              We were looking for a property that would offer long-term value as well as a good
-              lifestyle. MB Realty's approach to planning, design and customer experience really
-              stood out to us. We are excited about what the future holds.
-            </p>
-            <div class="about-testimonial-meta">
-              <h3>More Than Just a Property</h3>
-              <div class="about-testimonial-stars" aria-label="5 out of 5 stars"><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /></div>
-            </div>
-          </article>
+          <div class="about-testimonials-heading">
+            <h2 class="about-testimonials-title">
+              <span class="about-testimonials-title-strong">What Our Customers</span>
+              <span class="about-testimonials-title-script">Say</span>
+            </h2>
+          </div>
+
+          <div class="about-testimonials-mosaic">
+            <article class="about-testimonial-card">
+              <p>
+                From the initial enquiry to the final stages, the entire experience with MB Realty was
+                smooth and professional. The team was responsive, transparent and always available to
+                answer our questions. We are very happy with our decision.
+              </p>
+              <div class="about-testimonial-meta">
+                <h3>A Smooth and Transparent Experience</h3>
+                <div class="about-testimonial-stars" aria-label="5 out of 5 stars"><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /></div>
+              </div>
+            </article>
+            <article class="about-testimonial-card">
+              <p>
+                What impressed us most was the attention to detail and the overall planning. MB Realty
+                has clearly focused on creating a development that is practical, well-designed and
+                comfortable for families. We are extremely pleased with our investment.
+              </p>
+              <div class="about-testimonial-meta">
+                <h3>Thoughtful Planning and Quality</h3>
+                <div class="about-testimonial-stars" aria-label="5 out of 5 stars"><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /></div>
+              </div>
+            </article>
+            <article class="about-testimonial-card">
+              <p>
+                Buying property is a major decision, and we wanted a developer we could trust. The team
+                at MB Realty made the process simple and gave us confidence at every stage. We are glad
+                we chose MB Realty.
+              </p>
+              <div class="about-testimonial-meta">
+                <h3>A Decision We Feel Confident About</h3>
+                <div class="about-testimonial-stars" aria-label="5 out of 5 stars"><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /></div>
+              </div>
+            </article>
+            <article class="about-testimonial-card">
+              <p>
+                The team was approachable, knowledgeable and professional throughout our journey. They
+                understood our requirements, explained everything clearly and ensured that the process
+                was comfortable for us. It has been a very positive experience.
+              </p>
+              <div class="about-testimonial-meta">
+                <h3>Professional From Start to Finish</h3>
+                <div class="about-testimonial-stars" aria-label="5 out of 5 stars"><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /></div>
+              </div>
+            </article>
+            <article class="about-testimonial-card">
+              <p>
+                We were looking for a property that would offer long-term value as well as a good
+                lifestyle. MB Realty's approach to planning, design and customer experience really
+                stood out to us. We are excited about what the future holds.
+              </p>
+              <div class="about-testimonial-meta">
+                <h3>More Than Just a Property</h3>
+                <div class="about-testimonial-stars" aria-label="5 out of 5 stars"><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /><img src="about_asset/Path%20637.svg" alt="" width="15" height="15" /></div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -295,7 +333,7 @@
               />
             </div>
             <div class="footer-contact">
-              <a class="phone" href="tel:+917026001999">Call: +91 7026 001 999</a>
+              <a class="phone" href="tel:+917975666699">Call: +91 7975 666 699</a>
               <a class="email" href="mailto:info@mbrealty.co.in">E-mail: info@mbrealty.co.in</a>
             </div>
             <div class="footer-cols">

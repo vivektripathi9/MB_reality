@@ -124,7 +124,7 @@
     });
   });
 
-  const revealSections = document.querySelectorAll(".belief, .lap, .spaces, .blogs--featured");
+  const revealSections = document.querySelectorAll(".belief, .lap, .spaces, .blogs--featured, .about-team, .about-vision");
   if (revealSections.length) {
     if (reduceMotion || !("IntersectionObserver" in window)) {
       revealSections.forEach((section) => section.classList.add("is-inview"));
@@ -192,5 +192,135 @@
       if (next) showSlide(active + 1);
       if (dot && dot.dataset.blogIndex != null) showSlide(Number(dot.dataset.blogIndex));
     });
+  }
+
+  const aboutTeam = document.querySelector(".about-team");
+  if (aboutTeam) {
+    const track = aboutTeam.querySelector(".about-team-track");
+    const prevBtn = aboutTeam.querySelector(".about-team-prev");
+    const nextBtn = aboutTeam.querySelector(".about-team-next");
+    const teamReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let busy = false;
+
+    const markSettled = () => {
+      if (!aboutTeam.classList.contains("is-inview") || aboutTeam.classList.contains("is-settled")) return;
+      window.setTimeout(() => aboutTeam.classList.add("is-settled"), teamReduceMotion ? 0 : 1000);
+    };
+    markSettled();
+    new MutationObserver(markSettled).observe(aboutTeam, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    const cardStep = () => {
+      const card = track?.querySelector(".about-team-card");
+      if (!card || !track) return 0;
+      const styles = getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    };
+
+    const setBusy = (state) => {
+      busy = state;
+      prevBtn?.toggleAttribute("disabled", state);
+      nextBtn?.toggleAttribute("disabled", state);
+    };
+
+    const rotate = (direction) => {
+      if (!track || busy) return;
+      const cards = track.children;
+      if (cards.length < 2) return;
+
+      const distance = cardStep();
+      if (!distance) return;
+
+      if (teamReduceMotion) {
+        if (direction > 0) track.appendChild(cards[0]);
+        else track.insertBefore(cards[cards.length - 1], cards[0]);
+        return;
+      }
+
+      setBusy(true);
+      const ease = "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)";
+
+      if (direction > 0) {
+        const first = cards[0];
+        track.style.transition = ease;
+        track.style.transform = `translate3d(-${distance}px, 0, 0)`;
+
+        const finish = (event) => {
+          if (event.propertyName !== "transform") return;
+          track.removeEventListener("transitionend", finish);
+          track.appendChild(first);
+          track.style.transition = "none";
+          track.style.transform = "translate3d(0, 0, 0)";
+          void track.offsetWidth;
+          track.style.transition = "";
+          setBusy(false);
+        };
+        track.addEventListener("transitionend", finish);
+      } else {
+        const last = cards[cards.length - 1];
+        track.style.transition = "none";
+        track.insertBefore(last, cards[0]);
+        track.style.transform = `translate3d(-${distance}px, 0, 0)`;
+        void track.offsetWidth;
+        requestAnimationFrame(() => {
+          track.style.transition = ease;
+          track.style.transform = "translate3d(0, 0, 0)";
+          const finish = (event) => {
+            if (event.propertyName !== "transform") return;
+            track.removeEventListener("transitionend", finish);
+            track.style.transition = "";
+            setBusy(false);
+          };
+          track.addEventListener("transitionend", finish);
+        });
+      }
+    };
+
+    prevBtn?.addEventListener("click", () => rotate(-1));
+    nextBtn?.addEventListener("click", () => rotate(1));
+  }
+
+  const aboutVision = document.querySelector(".about-vision");
+  if (aboutVision && !reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+    let raf = 0;
+    let targetX = 50;
+    let targetY = 40;
+    let currentX = 50;
+    let currentY = 40;
+
+    const render = () => {
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+      aboutVision.style.setProperty("--spot-x", `${currentX}%`);
+      aboutVision.style.setProperty("--spot-y", `${currentY}%`);
+      raf = requestAnimationFrame(render);
+    };
+
+    const onMove = (event) => {
+      const rect = aboutVision.getBoundingClientRect();
+      targetX = ((event.clientX - rect.left) / rect.width) * 100;
+      targetY = ((event.clientY - rect.top) / rect.height) * 100;
+    };
+
+    aboutVision.addEventListener("pointerenter", (event) => {
+      aboutVision.classList.add("is-cursor-active");
+      onMove(event);
+      currentX = targetX;
+      currentY = targetY;
+      if (!raf) raf = requestAnimationFrame(render);
+    });
+
+    aboutVision.addEventListener("pointerleave", () => {
+      aboutVision.classList.remove("is-cursor-active");
+      if (raf) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+    });
+
+    aboutVision.addEventListener("pointermove", onMove);
   }
 })();
