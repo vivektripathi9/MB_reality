@@ -5811,17 +5811,18 @@ main > section,
 
 .microsite-location-label {
   font-family: var(--font);
-  font-size: clamp(11px, 1.05vw, 14px);
+  font-size: clamp(13px, 1.2vw, 16px);
   font-weight: 600;
   line-height: 1.25;
   color: #1a1a1a;
 }
 
 .microsite-location-node strong {
-  font-family: "Morison", "Times New Roman", serif;
-  font-size: clamp(12px, 1.1vw, 15px);
-  font-weight: 300;
-  letter-spacing: 0.02em;
+  font-family: var(--font);
+  font-size: clamp(13px, 1.2vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
   color: #1a1a1a;
 }
 
@@ -5933,9 +5934,10 @@ main > section,
 
 .microsite-location-detail-time {
   margin: 0 0 4px;
-  font-family: "Morison", "Times New Roman", serif;
-  font-size: 15px;
-  font-weight: 300;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
   color: #1a1a1a;
 }
 
@@ -6241,7 +6243,7 @@ main > section,
   .microsite-location-label {
     flex: 1 1 auto;
     max-width: none;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .microsite-location-node strong {
