@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us — MB Realty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="contact-page">
     <header class="site-header">
       <div class="header-inner">
         <a class="logo" href="index.html" aria-label="MB Realty home">
@@ -24,7 +30,7 @@
           <a href="microsite.html">Projects</a>
           <a href="blogs.html">Blogs</a>
         </nav>
-        <a class="btn-contact" href="contact.html">Contact Us</a>
+        <a class="btn-contact is-active" href="contact.html">Contact Us</a>
         <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -32,116 +38,126 @@
     </header>
 
     <main>
-      <section class="hero contact-hero" id="contact-hero">
-        <div class="hero-frame">
-          <img
-            class="hero-image"
-            src="assets/Rectangle%20750%20(5).png"
-            alt=""
-            width="1800"
-            height="1080"
-          />
-          <div class="hero-copy contact-hero-copy">
-            <h1>Connect With MB Realty</h1>
-            <p>
-              Whether you're looking for a home, an investment or a new opportunity, let's make it
-              happen together.
-            </p>
-          </div>
-        </div>
-      </section>
+      <div class="page-close-band contact-close-band">
+      <section class="contact-touch" id="get-in-touch" aria-label="Get in touch">
+        <div class="contact-touch-inner">
+          <div class="contact-touch-info">
+            <h1 class="contact-touch-title">
+              <span class="contact-touch-title-strong">Get In</span>
+              <span class="contact-touch-title-script">Touch</span>
+            </h1>
 
-      <section class="contact-panel" id="get-in-touch" aria-label="Contact form">
-        <div class="contact-card">
-          <aside class="contact-info">
-            <div class="contact-info-header">
-              <h2>
-                <span>Contact</span>
-                <span>Information</span>
-              </h2>
-              <p class="contact-info-lead">Say something to start a live chat!</p>
-            </div>
-            <ul class="contact-info-list">
-              <li>
-                <span class="contact-info-icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
-                <a href="tel:+917975666699">+91 7975 666 699</a>
-              </li>
-              <li>
-                <span class="contact-info-icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
-                <a href="mailto:info@mbrealty.co.in">info@mbrealty.co.in</a>
-              </li>
-              <li>
-                <span class="contact-info-icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
-                <span class="contact-info-address">
+            <div class="contact-office-grid">
+              <article class="contact-office">
+                <h2>Corporate Office</h2>
+                <p>
                   4th Floor, No. 67, 11th Main Rd,<br />
                   Sector 6, HSR Layout,<br />
                   Bengaluru, Karnataka 560102
-                </span>
-              </li>
-            </ul>
-          </aside>
+                </p>
+                <p><a href="tel:+917975666699">+91 7975 666 699</a></p>
+                <a
+                  class="contact-office-map"
+                  href="https://maps.google.com/?q=MB+Realty,+4th+Floor,+No.+67,+11th+Main+Rd,+Sector+6,+HSR+Layout,+Bengaluru"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View on map</a
+                >
+              </article>
 
-          <form class="contact-form" action="#" method="post">
-            <div class="contact-field">
-              <label for="contact-name">Name</label>
-              <input id="contact-name" name="name" type="text" autocomplete="name" required />
+              <article class="contact-office">
+                <h2>Sales Office</h2>
+                <p>
+                  Lap of Nature Enquiries<br />
+                  Whitefield–East Bengaluru Corridor<br />
+                  Bengaluru
+                </p>
+                <p><a href="tel:+917975666699">+91 7975 666 699</a></p>
+                <a class="contact-office-map" href="microsite.html">View project</a>
+              </article>
+
+              <article class="contact-office">
+                <h2>Email</h2>
+                <p>
+                  For general queries and<br />
+                  project information
+                </p>
+                <p>
+                  <a href="mailto:info@mbrealty.co.in">info@mbrealty.co.in</a>
+                </p>
+              </article>
+
+              <article class="contact-office">
+                <h2>Call Us</h2>
+                <p>
+                  Speak with our property<br />
+                  advisor during business hours
+                </p>
+                <p><a href="tel:+917975666699">+91 7975 666 699</a></p>
+              </article>
             </div>
-            <div class="contact-form-row">
-              <div class="contact-field">
-                <label for="contact-email">Email</label>
+          </div>
+
+          <div class="contact-touch-form-wrap">
+            <header class="contact-touch-form-header">
+              <h2>Enquire Here</h2>
+              <p>Please send us your query and we will get back to you shortly</p>
+            </header>
+
+            <form class="contact-touch-form" action="#" method="post">
+              <div class="contact-touch-field">
+                <label for="contact-firstname">First Name*</label>
+                <input id="contact-firstname" name="firstname" type="text" autocomplete="given-name" required />
+              </div>
+
+              <div class="contact-touch-field">
+                <label for="contact-email">Email*</label>
                 <input id="contact-email" name="email" type="email" autocomplete="email" required />
               </div>
-              <div class="contact-field">
-                <label for="contact-phone">Phone Number</label>
-                <input id="contact-phone" name="phone" type="tel" autocomplete="tel" />
-              </div>
-            </div>
-            <div class="contact-field">
-              <label for="contact-message">Message</label>
-              <input
-                id="contact-message"
-                name="message"
-                type="text"
-                placeholder="Write your message..."
-              />
-            </div>
-            <div class="contact-form-actions">
-              <button class="contact-submit" type="submit">Send Message</button>
-            </div>
-          </form>
-        </div>
-      </section>
 
-      <section class="contact-map" aria-label="Office location map">
-        <iframe
-          class="contact-map-frame"
-          title="MB Realty Pvt Ltd location"
-          src="https://maps.google.com/maps?q=MB+Realty,+4th+Floor,+No.+67,+11th+Main+Rd,+Sector+6,+HSR+Layout,+Bengaluru&z=16&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen
-        ></iframe>
+              <div class="contact-touch-field">
+                <label for="contact-phone">Phone Number*</label>
+                <input id="contact-phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+
+              <div class="contact-touch-field">
+                <label for="contact-project">Select Projects*</label>
+                <select id="contact-project" name="project" required>
+                  <option value="" selected disabled>-- Please Select --</option>
+                  <option value="lap-of-nature">Lap of Nature</option>
+                  <option value="general">General Enquiry</option>
+                </select>
+              </div>
+
+              <div class="contact-touch-field">
+                <label for="contact-source">How did you hear about us*</label>
+                <select id="contact-source" name="source" required>
+                  <option value="" selected disabled>-- Please Select --</option>
+                  <option value="google">Google</option>
+                  <option value="social">Social Media</option>
+                  <option value="referral">Referral</option>
+                  <option value="ads">Advertisement</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="contact-touch-field">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="3"></textarea>
+              </div>
+
+              <label class="contact-touch-consent">
+                <input type="checkbox" name="consent" required />
+                <span
+                  >I authorize MB Realty and its representatives to contact me with updates related to
+                  this enquiry via phone, email or WhatsApp.</span
+                >
+              </label>
+
+              <button class="contact-touch-submit" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
       </section>
 
       <div class="bottom-band">
@@ -199,6 +215,7 @@
         </footer>
       </div>
       <p class="copyright">© 2026 MB Realty . All Rights Reserved. Digital Partner PINAKKAA</p>
+      </div>
     </main>
 
     <script src="js/main.js"></script>

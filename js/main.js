@@ -124,7 +124,9 @@
     });
   });
 
-  const revealSections = document.querySelectorAll(".belief, .lap, .spaces, .blogs--featured, .about-team, .about-vision");
+  const revealSections = document.querySelectorAll(
+    ".belief, .lap, .spaces, .blogs--featured, .about-team, .about-vision, .microsite-amenities, .blogs-article, .blogs-more"
+  );
   if (revealSections.length) {
     if (reduceMotion || !("IntersectionObserver" in window)) {
       revealSections.forEach((section) => section.classList.add("is-inview"));
@@ -137,7 +139,7 @@
             revealObserver.unobserve(entry.target);
           });
         },
-        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+        { threshold: 0.05, rootMargin: "0px 0px -4% 0px" }
       );
       revealSections.forEach((section) => revealObserver.observe(section));
     }
@@ -322,5 +324,95 @@
     });
 
     aboutVision.addEventListener("pointermove", onMove);
+  }
+
+  const locationHub = document.querySelector(".microsite-location-hub");
+  if (locationHub) {
+    const detail = locationHub.querySelector(".microsite-location-detail");
+    const detailImg = detail?.querySelector(".microsite-location-detail-media img");
+    const detailTitle = detail?.querySelector(".microsite-location-detail-title");
+    const detailTime = detail?.querySelector(".microsite-location-detail-time");
+    const detailInfo = detail?.querySelector(".microsite-location-detail-info");
+    const closeBtn = detail?.querySelector(".microsite-location-detail-close");
+    const nodes = [...locationHub.querySelectorAll(".microsite-location-node")];
+    const triggers = [...locationHub.querySelectorAll(".microsite-location-trigger")];
+
+    const closeDetail = () => {
+      if (!detail) return;
+      detail.classList.remove("is-open", "is-above");
+      detail.hidden = true;
+      nodes.forEach((node) => node.classList.remove("is-active"));
+    };
+
+    const placeDetail = (trigger) => {
+      if (!detail) return;
+      const icon = trigger.querySelector(".microsite-location-icon") || trigger;
+      const hubRect = locationHub.getBoundingClientRect();
+      const iconRect = icon.getBoundingClientRect();
+      const gap = 14;
+      const panelWidth = Math.min(280, hubRect.width * 0.58);
+      const panelHeight = detail.offsetHeight || 260;
+
+      let left = iconRect.left - hubRect.left + iconRect.width / 2 - panelWidth / 2;
+      left = Math.max(8, Math.min(left, hubRect.width - panelWidth - 8));
+
+      const spaceBelow = hubRect.bottom - iconRect.bottom;
+      const placeAbove = spaceBelow < panelHeight + gap && iconRect.top - hubRect.top > panelHeight + gap;
+
+      detail.classList.toggle("is-above", placeAbove);
+
+      let top;
+      if (placeAbove) {
+        top = iconRect.top - hubRect.top - panelHeight - gap;
+      } else {
+        top = iconRect.bottom - hubRect.top + gap;
+      }
+      top = Math.max(8, Math.min(top, hubRect.height - panelHeight - 8));
+
+      detail.style.width = `${panelWidth}px`;
+      detail.style.left = `${left}px`;
+      detail.style.top = `${top}px`;
+    };
+
+    const openDetail = (trigger) => {
+      if (!detail || !detailImg || !detailTitle || !detailTime || !detailInfo) return;
+      const node = trigger.closest(".microsite-location-node");
+      nodes.forEach((item) => item.classList.toggle("is-active", item === node));
+      detailImg.src = trigger.dataset.locImage || "";
+      detailImg.alt = trigger.dataset.locTitle || "";
+      detailTitle.textContent = trigger.dataset.locTitle || "";
+      detailTime.textContent = trigger.dataset.locTime || "";
+      detailInfo.textContent = trigger.dataset.locInfo || "";
+      detail.hidden = false;
+      placeDetail(trigger);
+      requestAnimationFrame(() => {
+        placeDetail(trigger);
+        detail.classList.add("is-open");
+      });
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const node = trigger.closest(".microsite-location-node");
+        if (node?.classList.contains("is-active") && detail && !detail.hidden) {
+          closeDetail();
+          return;
+        }
+        openDetail(trigger);
+      });
+    });
+
+    closeBtn?.addEventListener("click", closeDetail);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeDetail();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!detail || detail.hidden) return;
+      if (event.target.closest(".microsite-location-detail")) return;
+      if (event.target.closest(".microsite-location-trigger")) return;
+      closeDetail();
+    });
   }
 })();
