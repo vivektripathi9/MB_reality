@@ -4,21 +4,30 @@
   const navLinks = document.querySelectorAll(".nav a");
 
   if (toggle && header) {
+    const closeMenu = () => {
+      header.classList.remove("nav-open");
+      document.body.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+      updateHeaderScroll();
+    };
+
     toggle.addEventListener("click", () => {
       const open = header.classList.toggle("nav-open");
+      document.body.classList.toggle("nav-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       updateHeaderScroll();
     });
 
     navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        header.classList.remove("nav-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open menu");
-        updateHeaderScroll();
-      });
+      link.addEventListener("click", closeMenu);
     });
+
+    const contactBtn = header.querySelector(".btn-contact");
+    if (contactBtn) {
+      contactBtn.addEventListener("click", closeMenu);
+    }
   }
 
   const updateHeaderScroll = () => {
