@@ -9,7 +9,6 @@
       document.body.classList.remove("nav-open");
       toggle.setAttribute("aria-expanded", "false");
       toggle.setAttribute("aria-label", "Open menu");
-      updateHeaderScroll();
     };
 
     toggle.addEventListener("click", () => {
@@ -17,23 +16,21 @@
       document.body.classList.toggle("nav-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      updateHeaderScroll();
     });
 
     navLinks.forEach((link) => {
       link.addEventListener("click", closeMenu);
     });
 
-    const contactBtn = header.querySelector(".btn-contact");
-    if (contactBtn) {
-      contactBtn.addEventListener("click", closeMenu);
+    const contactLink = header.querySelector(".header-contact");
+    if (contactLink) {
+      contactLink.addEventListener("click", closeMenu);
     }
   }
 
   const updateHeaderScroll = () => {
     if (!header) return;
-    const atTop = window.scrollY <= 24;
-    header.classList.toggle("is-hidden", !atTop && !header.classList.contains("nav-open"));
+    header.classList.toggle("is-scrolled", window.scrollY > 24);
   };
 
   const sections = document.querySelectorAll("section[id], footer[id]");
