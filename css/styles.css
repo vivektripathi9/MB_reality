@@ -2761,6 +2761,7 @@ main > section,
 
 /* Belief + Ongoing Project — one continuous cream band */
 .home-cream-band {
+  padding-top: clamp(28px, 4vw, 56px);
   background: linear-gradient(
     180deg,
     #f7f4ee 0%,
