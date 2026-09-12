@@ -1366,21 +1366,44 @@ body.nav-open {
   }
 }
 
-/* Contact page — keep dark translucent bar on cream */
+/* Contact page — dark navbar text on cream background */
 .contact-page .header-contact,
 .contact-page .header-phone,
 .contact-page .menu-toggle-label {
-  color: rgba(255, 255, 255, 0.96);
+  color: #1a1a1a;
+}
+
+.contact-page .menu-toggle {
+  color: #1a1a1a;
+  border-color: #c4a35a;
 }
 
 .contact-page .menu-toggle-bars span {
-  background: #fff;
+  background: #1a1a1a;
 }
 
 .contact-page .header-contact:hover,
 .contact-page .header-contact.is-active,
 .contact-page .header-phone:hover {
-  color: #f8ba46;
+  color: #b8860b;
+}
+
+.contact-page .menu-toggle:hover {
+  background: rgba(196, 163, 90, 0.12);
+}
+
+/* Keep menu control light when the dark panel is open */
+.contact-page .site-header.nav-open .menu-toggle {
+  color: #fff;
+  border-color: #f8ba46;
+}
+
+.contact-page .site-header.nav-open .menu-toggle-label {
+  color: #fff;
+}
+
+.contact-page .site-header.nav-open .menu-toggle-bars span {
+  background: #fff;
 }
 
 /* Contact — full-width Get In Touch */
@@ -1597,6 +1620,170 @@ body.nav-open {
 .contact-touch-submit:hover {
   background: #050f27;
   transform: translateY(-1px);
+}
+
+/* Brochure signup modal */
+.brochure-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vw, 40px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.brochure-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.brochure-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.62);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.brochure-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 460px);
+  max-height: min(90vh, 720px);
+  overflow-y: auto;
+  background: #f7f4ee;
+  color: #1a1a1a;
+  padding: clamp(28px, 4vw, 40px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  transform: translateY(16px);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brochure-modal.is-open .brochure-modal-dialog {
+  transform: translateY(0);
+}
+
+.brochure-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: #1a1a1a;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.brochure-modal-close:hover {
+  color: #b8860b;
+}
+
+.brochure-modal-title {
+  margin: 0 0 8px;
+  font-family: "Morison", "Times New Roman", serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+}
+
+.brochure-modal-copy {
+  margin: 0 0 clamp(24px, 3vw, 32px);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5c6478;
+}
+
+.brochure-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.brochure-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brochure-modal-field label {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.brochure-modal-field input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #1a1a1a;
+  border-radius: 0;
+  background: transparent;
+  padding: 8px 0 10px;
+  font-family: var(--font);
+  font-size: 15px;
+  color: #1a1a1a;
+  outline: none;
+}
+
+.brochure-modal-field input:focus {
+  border-bottom-color: #f8ba46;
+}
+
+.brochure-modal-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font);
+  font-size: 12px;
+  line-height: 1.55;
+  color: #5c6478;
+  cursor: pointer;
+}
+
+.brochure-modal-consent input {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.brochure-modal-submit {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 4px;
+  border: 0;
+  background: #1a1a1a;
+  color: #fff;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.brochure-modal-submit:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+body.brochure-modal-open {
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {

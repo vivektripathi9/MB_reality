@@ -19,7 +19,12 @@
     });
 
     navLinks.forEach((link) => {
-      link.addEventListener("click", closeMenu);
+      link.addEventListener("click", (event) => {
+        if (link.classList.contains("js-brochure-open")) {
+          event.preventDefault();
+        }
+        closeMenu();
+      });
     });
 
     const contactLink = header.querySelector(".header-contact");
@@ -27,6 +32,93 @@
       contactLink.addEventListener("click", closeMenu);
     }
   }
+
+  const ensureBrochureModal = () => {
+    let modal = document.getElementById("brochure-modal");
+    if (modal) return modal;
+
+    modal = document.createElement("div");
+    modal.id = "brochure-modal";
+    modal.className = "brochure-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-labelledby", "brochure-modal-title");
+    modal.hidden = true;
+    modal.innerHTML = `
+      <div class="brochure-modal-backdrop" data-brochure-close></div>
+      <div class="brochure-modal-dialog">
+        <button type="button" class="brochure-modal-close" data-brochure-close aria-label="Close">&times;</button>
+        <h2 id="brochure-modal-title" class="brochure-modal-title">Download Brochure</h2>
+        <p class="brochure-modal-copy">Share your details and we&rsquo;ll send the brochure to your inbox.</p>
+        <form class="brochure-modal-form" action="#" method="post">
+          <div class="brochure-modal-field">
+            <label for="brochure-name">Full Name*</label>
+            <input id="brochure-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="brochure-modal-field">
+            <label for="brochure-email">Email*</label>
+            <input id="brochure-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="brochure-modal-field">
+            <label for="brochure-phone">Phone Number*</label>
+            <input id="brochure-phone" name="phone" type="tel" autocomplete="tel" required />
+          </div>
+          <label class="brochure-modal-consent">
+            <input type="checkbox" name="consent" required />
+            <span>I authorize MB Realty and its representatives to contact me with the brochure and related updates via phone, email or WhatsApp.</span>
+          </label>
+          <button class="brochure-modal-submit" type="submit">Submit</button>
+        </form>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    return modal;
+  };
+
+  const brochureModal = ensureBrochureModal();
+  const brochureForm = brochureModal.querySelector(".brochure-modal-form");
+
+  const openBrochureModal = () => {
+    brochureModal.hidden = false;
+    requestAnimationFrame(() => {
+      brochureModal.classList.add("is-open");
+      document.body.classList.add("brochure-modal-open");
+      brochureModal.querySelector("#brochure-name")?.focus();
+    });
+  };
+
+  const closeBrochureModal = () => {
+    brochureModal.classList.remove("is-open");
+    document.body.classList.remove("brochure-modal-open");
+    window.setTimeout(() => {
+      if (!brochureModal.classList.contains("is-open")) {
+        brochureModal.hidden = true;
+      }
+    }, 300);
+  };
+
+  document.querySelectorAll(".js-brochure-open").forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      openBrochureModal();
+    });
+  });
+
+  brochureModal.querySelectorAll("[data-brochure-close]").forEach((el) => {
+    el.addEventListener("click", closeBrochureModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && brochureModal.classList.contains("is-open")) {
+      closeBrochureModal();
+    }
+  });
+
+  brochureForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    brochureForm.reset();
+    closeBrochureModal();
+  });
 
   const updateHeaderScroll = () => {
     if (!header) return;
