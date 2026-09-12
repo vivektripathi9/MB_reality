@@ -28,25 +28,18 @@
     }
   }
 
-  let lastScrollY = window.scrollY;
-
   const updateHeaderScroll = () => {
     if (!header) return;
     const currentY = window.scrollY;
-    const delta = currentY - lastScrollY;
     const menuOpen = header.classList.contains("nav-open");
 
     header.classList.toggle("is-scrolled", currentY > 24);
 
     if (menuOpen || currentY <= 40) {
       header.classList.remove("is-hidden");
-    } else if (delta > 6) {
+    } else {
       header.classList.add("is-hidden");
-    } else if (delta < -6) {
-      header.classList.remove("is-hidden");
     }
-
-    lastScrollY = currentY;
   };
 
   const sections = document.querySelectorAll("section[id], footer[id]");

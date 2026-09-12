@@ -341,7 +341,7 @@ body.nav-open {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 50%;
+  width: 30%;
   max-width: none;
   height: 100%;
   min-height: 100svh;
@@ -525,6 +525,13 @@ body.nav-open {
   padding-bottom: 2px;
   white-space: nowrap;
   transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-meta-item a[href^="mailto:"] {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .nav-meta-item a:hover {
@@ -4592,7 +4599,7 @@ body.nav-open {
   }
 
   .nav {
-    width: 50%;
+    width: 30%;
     min-width: 280px;
     overflow: hidden;
   }
