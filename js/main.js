@@ -28,9 +28,25 @@
     }
   }
 
+  let lastScrollY = window.scrollY;
+
   const updateHeaderScroll = () => {
     if (!header) return;
-    header.classList.toggle("is-scrolled", window.scrollY > 24);
+    const currentY = window.scrollY;
+    const delta = currentY - lastScrollY;
+    const menuOpen = header.classList.contains("nav-open");
+
+    header.classList.toggle("is-scrolled", currentY > 24);
+
+    if (menuOpen || currentY <= 40) {
+      header.classList.remove("is-hidden");
+    } else if (delta > 6) {
+      header.classList.add("is-hidden");
+    } else if (delta < -6) {
+      header.classList.remove("is-hidden");
+    }
+
+    lastScrollY = currentY;
   };
 
   const sections = document.querySelectorAll("section[id], footer[id]");
